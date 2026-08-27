@@ -47,10 +47,6 @@ export default function Level10({ onUnlock }: Level10Props) {
             />
             <span answer="Yes"></span>
           </div>
-
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>Loki</span>
-          </div>
         </>
       }
 
