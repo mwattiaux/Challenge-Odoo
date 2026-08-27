@@ -11,51 +11,58 @@ interface Level16Props {
 }
 
 export default function Level16({ onUnlock }: Level16Props) {
+   const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'My page description');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'First riddle part';
+      meta.content = 'I have a head...';
+      document.head.appendChild(meta);
+    }
   return (
     <LevelTemplate
       levelNumber={16}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="Use your head"
+      subtitle="Once more, knowledge eludes you. Yet it is here. You need only remember it."
       hintTimerDuration={10}
-      
+      tailHover='...,I have a tail...'
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 16. Refer to Level 0 for example structure." />
+          {/* <ComponentLabel name="ContentText" /> */}
+          <ContentText text="... ,but I have no body" />
           
-          <ComponentLabel name="ContentImage" />
+          {/* <ComponentLabel name="ContentImage" /> */}
           <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
+            src="src/assets/footprint_jb.jpg" 
             alt="Placeholder" 
           />
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
+          {/* <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
             🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
+          </div> */}
         </>
       }
 
-      correctAnswer="test"
+      correctAnswer="Coin"
       nextRoute="/level17"
       
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 16." />
+          {/* <ComponentLabel name="ContentText inside Hint" /> */}
+          <ContentText text="I swear it's somewhere in the head**" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 16." />
+          {/* <ComponentLabel name="ContentText inside Hint" /> */}
+          <ContentText text="The second part is the tail end of this page" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          {/* <ComponentLabel name="ContentAudio inside Hint" /> */}
+          <ContentText text="The two parts are in the header and the footer" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          {/* <ComponentLabel name="ContentVideo inside Hint" /> */}
+          <ContentText text="I have a head, I have a tail, but no body." />
         </Hint>
       ]}
       
