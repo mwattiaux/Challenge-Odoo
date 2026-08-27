@@ -1,65 +1,57 @@
-import LevelTemplate from '../components/LevelTemplate';
-import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
+import ContentText from '../components/ContentText';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import LevelTemplate from '../components/LevelTemplate';
+import "./Level9.css";
 
 interface Level9Props {
-  onUnlock: () => void;
+    onUnlock: () => void;
 }
 
 export default function Level9({ onUnlock }: Level9Props) {
-  return (
-    <LevelTemplate
-      levelNumber={9}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
-      
-      riddleContent={
-        <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 9. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+    return (
+        <LevelTemplate
+            levelNumber={9}
+            title="Nothing to hide"
+            subtitle="I dont have anything to hide, but I do have something to show you. Can you find it?"
+            hintTimerDuration={10}
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
-        </>
-      }
+            riddleContent={
+                <>
+                    <ContentImage
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp12537711.jpg"
+                        alt="Placeholder"
+                    />
 
-      correctAnswer="test"
-      nextRoute="/odoo-intern-9"
-      
-      hints={[
-        <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 9." />
-        </Hint>,
-        <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 9." />
-        </Hint>,
-        <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
-        </Hint>,
-        <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
-      ]}
-      
-      onUnlock={onUnlock}
-    />
-  );
+                    <div className="nothing-here-box">
+                        <p className="rdm-text p-1">g 2 t</p>
+                        <p className="rdm-text p-2">Q 1 o</p>
+                        <p className="rdm-text p-3">6</p>
+                        <p className="rdm-text p-4">i</p>
+                    </div>
+
+                </>
+            }
+
+            correctAnswer="Q61go2it"
+            nextRoute="/odoo-intern-9"
+
+            hints={[
+                <Hint number={1}>
+                    <ContentText text="Tone on Tone" />
+                </Hint>,
+                <Hint number={2}>
+                    <ContentText text="Color is the key" />
+                </Hint>,
+                <Hint number={3}>
+                    <ContentText text="The color var is the key" />
+                </Hint>,
+                <Hint number={4}>
+                    <ContentText text="The color var of the tag is the key" />
+                </Hint>
+            ]}
+
+            onUnlock={onUnlock}
+        />
+    );
 }
