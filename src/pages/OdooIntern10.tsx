@@ -20,7 +20,7 @@ export default function OdooIntern10({ onUnlockNext }: OdooIntern10Props) {
           name="Arthur De Clerck"
           subtitle="Full Stack Developer"
           avatarUrl={arthurPP}
-          bio="Heir of the legendary king Arthur (only in name noting else), this one didn't take the sword from the stone but he did take the challenge of becoming a Developer."
+          bio="Heir of the legendary king Arthur (only in name nothing else), this one didn't take the sword from the stone but he did take the challenge of becoming a Developer."
           age="24"
           favoriteShows={[
             "One Piece",
@@ -37,8 +37,8 @@ export default function OdooIntern10({ onUnlockNext }: OdooIntern10Props) {
           stats={[
             { label: "BPM", value: "85" },
             { label: "Steps", value: "7000" },
-            { label: "Alive", value: "I think so" },
             { label: "Stress Level", value: "Over 9000" },
+            { label: "Alive", value: "I think so" },
           ]}
           skills={[
             { name: "Python", level: "85%" },
