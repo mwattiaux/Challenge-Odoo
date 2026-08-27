@@ -1,10 +1,7 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
 import Hliðskjálf from '../assets/images/level21/Odin_s_Throne_by_BurningBrushGallery_on_deviantART_1024x1024.webp';
 
 interface Level21Props {
