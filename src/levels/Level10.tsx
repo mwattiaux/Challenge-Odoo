@@ -22,13 +22,13 @@ export default function Level10({ onUnlock }: Level10Props) {
           <ContentText text="One of these doors leads to heaven and the other to hell. Choose the right one." />
 
           <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}
-            question="Do you know which of the two doors is the right one?"
+            {...({ question: "Do you know which of the two doors is the right one?" } as any)}
           >
             <ContentImage
               src={guard}
               alt="Guard 1 says the door to my right is the door to heaven."
             />
-            <span answer="No"></span>
+            <span {...({ answer: "No" } as any)}></span>
 
             <ContentImage
               src={guard_door}
@@ -42,7 +42,7 @@ export default function Level10({ onUnlock }: Level10Props) {
               src={guard}
               alt="Guard 2 says the door to my left is the door to heaven."
             />
-            <span answer="Yes"></span>
+            <span {...({ answer: "Yes" } as any)}></span>
           </div>
         </>
       }
