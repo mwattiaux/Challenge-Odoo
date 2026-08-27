@@ -13,8 +13,8 @@ export default function Level12({ onUnlock }: Level12Props) {
   return (
     <LevelTemplate
       levelNumber={12}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title=""
+      subtitle="The title is already an hint"
       hintTimerDuration={10}
       
       riddleContent={
