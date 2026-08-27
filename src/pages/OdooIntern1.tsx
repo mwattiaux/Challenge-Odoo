@@ -9,45 +9,48 @@ export default function OdooIntern1({ onUnlockNext }: OdooIntern1Props) {
   return (
     <InternTemplate
       levelNumber={1}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Cailleaux Maxime"
+      internRole="Developer"
       nextRoute="/level2"
       onUnlockNext={onUnlockNext}
       
       content={
         <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 1. Refer to Level 0 for example structure and tone."
-          age="25"
+          name="Maxime"
+          subtitle=""
+          avatarUrl="src/assets/level1/C.M FK9.png"
+          bio="Congrats! You’ve just discovered one of the greatest nemeses of my favorite hobby: the Door, a legendary foe in tabletop role-playing games.
+           Nice to meet you!"
+          age="29"
           favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
+            "Lords of The Rings",
+            "Parasite the Maxim",
+            "The Expanse"
           ]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+            "Binding of Isaac",
+            "Warhammer games",
+            "Sim Racing"
           ]}
-          quote="Here is a funny quote or catchphrase."
-          mood="Here is the current mood"
+          quote="I'm the fatest to go at my own rythm."
+          mood="Rolling for intiative for the intership !"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
-            { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+              { label: "Coding Fuel", value: "Hot chocolate & Bad Ideas" },
+              { label: "D&D Experience", value: "Forever DM 🎲" },
+              { label: "Bug Solving", value: "Works on My Machine™" },
+              { label: "New Quest", value: "Odoo 🚀" },
           ]}
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+              { name: "Writing documentation", level: "100%" },
+              { name: "Flying ULM (3Axis)", level: "90%" },
+              { name: "Turning bugs into features", level: "80%" },
+              { name: "Pretending I Understand Git", level: "76%" },
+              { name: "Cooking (With indications !)",level: "55%"}
           ]}
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+            { title: "Traumarena", description: "A versus fighting video-game on Unreal Engine " +
+                    "https://www.youtube.com/watch?v=pLVagZ8gtrg" },
+            { title: "Connect'a", description: "An angular app, to facilitate finding manual professionals" }
           ]}
         />
       }
