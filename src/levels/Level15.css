@@ -1,0 +1,54 @@
+.system-module-terminal {
+  padding: 20px;
+  background: black;
+  border-radius: 8px;
+  color: greenyellow;
+  font-family: monospace;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+.system-module-panel {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+.system-module-btn {
+  padding: 8px 16px;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.system-module-btn:hover {
+  opacity: 0.9;
+}
+
+.system-module-alert-error {
+  margin-top: 12px;
+  padding: 10px;
+  background: lightpink;
+  border-left: 4px solid red;
+  color: darkred;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.system-module-alert-success {
+  margin-top: 12px;
+  padding: 10px;
+  background: lightgreen;
+  border-left: 4px solid green;
+  color: darkgreen;
+  font-size: 14px;
+}
+
+.system-module-code {
+  font-family: monospace;
+}
