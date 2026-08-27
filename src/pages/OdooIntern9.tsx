@@ -19,7 +19,7 @@ export default function OdooIntern9({ onUnlockNext }: OdooIntern9Props) {
                 <InternProfileCard
                     name="Alexandre Pirmez"
                     subtitle="developer"
-                    avatarUrl="/src/assets/alexandre_pirmez_image_profile.png"
+                    avatarUrl="https://portfolio-sandy-one-51.vercel.app/_next/image?url=%2Fprofile.webp&w=640&q=75"
                     bio="Congratulations on this one! A harder one will come soon!"
                     age="27"
                     favoriteShows={[
