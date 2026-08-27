@@ -35,7 +35,7 @@ export default function Level12({ onUnlock }: Level12Props) {
         </>
       }
 
-      correctAnswer="Emptyness"
+      correctAnswer="Emptiness"
       nextRoute="/level13"
       
       hints={[
