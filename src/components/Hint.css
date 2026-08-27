@@ -1,0 +1,26 @@
+.hint-box.revealed {
+  background: #fdfafc; /* Fond très légèrement rosé/mauve */
+  border: 1px solid #ebdbe5; /* Bordure douce et propre */
+  border-left: 4px solid #714B67; /* Marqueur distinctif aux couleurs d'Odoo */
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  box-shadow: 0 2px 6px rgba(113, 75, 103, 0.04);
+  text-align: left; /* Aligné à gauche pour une meilleure lisibilité */
+}
+
+/* Style du titre de l'indice (ex: 💡 Hint 1:) */
+.hint-box.revealed strong {
+  color: #714B67;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* Contenu interne de l'indice */
+.hint-content-wrapper {
+  color: #4b5563;
+  line-height: 1.5;
+}

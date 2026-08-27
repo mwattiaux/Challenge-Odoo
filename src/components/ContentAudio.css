@@ -1,0 +1,13 @@
+.content-audio-container {
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-audio-player {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 30px;
+  outline: none;
+}

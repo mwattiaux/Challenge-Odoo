@@ -1,0 +1,118 @@
+:root {
+  --odoo-purple: #714B67;
+  --odoo-purple-hover: #5c3c53;
+  --bg-white: #FFFFFF;
+  --bg-light: #F8F9FA;
+  --text-dark: #212529;
+  --text-gray: #6C757D;
+  --border-color: #DEE2E6;
+  --error-red: #E74C3C;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.level-container {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.level-card {
+  background-color: var(--bg-white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.level-card h1 {
+  font-size: 2rem;
+  color: var(--odoo-purple);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: var(--text-gray);
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.puzzle-image-box {
+  background-color: #FAFAFA;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+}
+
+.pizza-img {
+  max-height: 100px;
+  max-width: 80%;
+  object-fit: contain;
+}
+
+.riddle-hint {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+input[type="text"] {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  width: 250px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--odoo-purple);
+}
+
+.btn-submit {
+  background-color: var(--odoo-purple);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: var(--odoo-purple-hover);
+}
+
+.error-message {
+  color: var(--error-red);
+  margin-top: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

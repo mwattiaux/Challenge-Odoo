@@ -1,0 +1,85 @@
+.intern-page-container {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+}
+
+.intern-page-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.level-badge {
+  background: #fdf4ff;
+  color: #86198f;
+  border: 1px solid #f5d0fe;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.intern-page-header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin: 10px 0 5px 0;
+}
+
+.intern-role {
+  color: #64748b;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Le grand conteneur blanc unifié (identique au style des pages d'énigmes) */
+.intern-main-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 950px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.intern-page-content {
+  width: 100%;
+}
+
+.intern-page-footer {
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 25px;
+}
+
+.next-level-btn {
+  background-color: #714B67; /* Couleur Odoo */
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(113, 75, 103, 0.3);
+}
+
+.next-level-btn:hover {
+  background-color: #5c3c53;
+  transform: translateY(-1px);
+}
+
+.next-level-btn:active {
+  transform: translateY(0);
+}
