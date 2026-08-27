@@ -1,5 +1,5 @@
-import InternTemplate from '../components/InternTemplate';
-import InternProfileCard from '../components/InternProfileCard';
+import InternTemplate from "../components/InternTemplate";
+import InternProfileCard from "../components/InternProfileCard";
 
 interface OdooIntern4Props {
   onUnlockNext: () => void;
@@ -9,45 +9,55 @@ export default function OdooIntern4({ onUnlockNext }: OdooIntern4Props) {
   return (
     <InternTemplate
       levelNumber={4}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Valentyn Dementiev"
+      internRole='Chief "It Works On My Machine" Officer'
       nextRoute="/level5"
       onUnlockNext={onUnlockNext}
-      
       content={
-        <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 4. Refer to Level 0 for example structure and tone."
-          age="25"
-          favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
-          ]}
+        <InternProfileCard
+          name="Valentyn"
+          subtitle=".NET Full-Stack"
+          avatarUrl="src\assets\valentyn-assets\avatar.jpg"
+          bio="Hi, congrats on passing my little task, be ready for even more o_O"
+          age="23"
+          favoriteShows={["Sopranos 🚬", "Office 💼", "Interns 🏥"]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+            "Witcher (1/3) ⚔️",
+            "Hollow Knight: Silksong 🐝",
+            "...and a lot of other, so just check it out STEAMCOMMUNITY.COM/ID/122GEROLD122",
           ]}
-          quote="Here is a funny quote or catchphrase."
-          mood="Here is the current mood"
+          quote="First make it work, then make it right, then make it fast"
+          mood="Excitedly waiting"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
-            { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+            {
+              label: "Analytics Overthinking 🧠",
+              value: "99% Stare-at-Wall Rate",
+            },
+            { label: "Soda Requirement 🥤", value: "Critically High" },
+            {
+              label: "Debugging Approach 🔍",
+              value: "Print Statements & Fast Iteration",
+            },
+            { label: "Core Competency ⚙️", value: "Backend & System Logic" },
           ]}
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+            { name: ".NET / C# ⚡", level: "70%" },
+            { name: "Angular / TypeScript 🅰️", level: "55%" },
+            { name: "SQL & Databases 🗄️", level: "60%" },
+            { name: "Git & Dev Tools 🛠️", level: "75%" },
+            { name: "Docker & Infrastructure 🐳", level: "45%" },
           ]}
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+            {
+              title: "Gamebuddy 🎮🇺🇦",
+              description:
+                "My university capstone project. A team-matching platform to find co-op partners and avoid silent randoms who rush 1v5.",
+            },
+            {
+              title: "Commercial Experience 💼",
+              description:
+                "Past full-stack development work involving backend logic, database optimization, and microservice architectures.",
+            },
           ]}
         />
       }
