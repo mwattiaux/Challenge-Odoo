@@ -1,5 +1,6 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
+import avatarImage from "../assets/level1/C.M FK9.png";
 
 interface OdooIntern1Props {
   onUnlockNext: () => void;
@@ -18,7 +19,7 @@ export default function OdooIntern1({ onUnlockNext }: OdooIntern1Props) {
         <InternProfileCard 
           name="Maxime"
           subtitle=""
-          avatarUrl="src/assets/level1/C.M FK9.png"
+          avatarUrl={avatarImage}
           bio="Congrats! You’ve just discovered one of the greatest nemeses of my favorite hobby: the Door, a legendary foe in tabletop role-playing games.
            Nice to meet you!"
           age="29"
