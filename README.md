@@ -50,22 +50,22 @@ src/
 
 ---
 
-## 👥 Participant Assignments (Act 1)
+## 👥 Participant Assignments (Act 1 & Act 2)
 
-Each participant is assigned a unique number from **1 to 11**. The files you need to modify for your contributions are **strictly** limited to your assigned level (`LevelX.tsx`) and your associated intern profile (`OdooInternX.tsx`). In practice, you should not touch the rest of the core codebase.
+Each participant is assigned a unique number from **1 to 11**. The files you need to modify for your contributions are **strictly** limited to your assigned levels (`LevelX.tsx` for Act 1 and `LevelY.tsx` for Act 2) and your associated intern profile (`OdooInternX.tsx`). In practice, you should not touch the rest of the core codebase.
 
 ### 📋 Assignment List :
-- **Maxime C.** : Number **1** — Files to modify : `src/levels/Level1.tsx` and `src/pages/OdooIntern1.tsx`
-- **Aaron** : Number **2** — Files to modify : `src/levels/Level2.tsx` and `src/pages/OdooIntern2.tsx`
-- **Maxime W.** : Number **3** — Files to modify : `src/levels/Level3.tsx` and `src/pages/OdooIntern3.tsx`
-- **Valentyn** : Number **4** — Files to modify : `src/levels/Level4.tsx` and `src/pages/OdooIntern4.tsx`
-- **Jean-Baptiste** : Number **5** — Files to modify : `src/levels/Level5.tsx` and `src/pages/OdooIntern5.tsx`
-- **Denis** : Number **6** — Files to modify : `src/levels/Level6.tsx` and `src/pages/OdooIntern6.tsx`
-- **Jérôme** : Number **7** — Files to modify : `src/levels/Level7.tsx` and `src/pages/OdooIntern7.tsx`
-- **Maxime N.** : Number **8** — Files to modify : `src/levels/Level8.tsx` and `src/pages/OdooIntern8.tsx`
-- **Alex** : Number **9** — Files to modify : `src/levels/Level9.tsx` and `src/pages/OdooIntern9.tsx`
-- **Arthur** : Number **10** — Files to modify : `src/levels/Level10.tsx` and `src/pages/OdooIntern10.tsx`
-- **Corentin** : Number **11** — Files to modify : `src/levels/Level11.tsx` and `src/pages/OdooIntern11.tsx`
+- **Maxime C.** : Number **1** — Files to modify : `src/levels/Level1.tsx`, `src/levels/Level12.tsx` and `src/pages/OdooIntern1.tsx`
+- **Aaron** : Number **2** — Files to modify : `src/levels/Level2.tsx`, `src/levels/Level13.tsx` and `src/pages/OdooIntern2.tsx`
+- **Maxime W.** : Number **3** — Files to modify : `src/levels/Level3.tsx`, `src/levels/Level14.tsx` and `src/pages/OdooIntern3.tsx`
+- **Valentyn** : Number **4** — Files to modify : `src/levels/Level4.tsx`, `src/levels/Level15.tsx` and `src/pages/OdooIntern4.tsx`
+- **Jean-Baptiste** : Number **5** — Files to modify : `src/levels/Level5.tsx`, `src/levels/Level16.tsx` and `src/pages/OdooIntern5.tsx`
+- **Denis** : Number **6** — Files to modify : `src/levels/Level6.tsx`, `src/levels/Level17.tsx` and `src/pages/OdooIntern6.tsx`
+- **Jérôme** : Number **7** — Files to modify : `src/levels/Level7.tsx`, `src/levels/Level18.tsx` and `src/pages/OdooIntern7.tsx`
+- **Maxime N.** : Number **8** — Files to modify : `src/levels/Level8.tsx`, `src/levels/Level19.tsx` and `src/pages/OdooIntern8.tsx`
+- **Alex** : Number **9** — Files to modify : `src/levels/Level9.tsx`, `src/levels/Level20.tsx` and `src/pages/OdooIntern9.tsx`
+- **Arthur** : Number **10** — Files to modify : `src/levels/Level10.tsx`, `src/levels/Level21.tsx` and `src/pages/OdooIntern10.tsx`
+- **Corentin** : Number **11** — Files to modify : `src/levels/Level11.tsx`, `src/levels/Level22.tsx` and `src/pages/OdooIntern11.tsx`
 
 ### ⚠️ Important Guidelines for Adding Content :
 - If you need to create or add **custom components** specific to your level/profile, you must place them inside the `src/components/` subfolder.
