@@ -1,10 +1,7 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
-import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import FleeingButtonPuzzle, { FLEEING_BUTTON_FLAG } from '../components/FleeingButtonPuzzle';
 
 interface Level22Props {
   onUnlock: () => void;
@@ -14,51 +11,31 @@ export default function Level22({ onUnlock }: Level22Props) {
   return (
     <LevelTemplate
       levelNumber={22}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
-      
+      title="Don't Touch My Domain"
+      subtitle="Click this button."
+      hintTimerDuration={20}
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 22. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
-
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
+          <ContentText text="This button seems undominatable" />
+          <FleeingButtonPuzzle />
         </>
       }
-
-      correctAnswer="test"
+      correctAnswer={FLEEING_BUTTON_FLAG}
       nextRoute="/congratulations"
-      
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 22." />
+          <ContentText text="Maybe you should try something else" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 22." />
+          <ContentText text="Maybe you should just do what you're told not to do" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ContentText text="You don't necessarily need a mouse to make something believe it was clicked." />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
+          <ContentText text="fleeing-btn" />
+        </Hint>,
       ]}
-      
       onUnlock={onUnlock}
     />
   );
