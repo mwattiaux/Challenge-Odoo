@@ -10,12 +10,13 @@ interface Project { title: string; description: string; url?: string; }
 
 interface InternProfileCardProps {
     name: string;
-    subtitle: string;
+    subtitle?: string;
     avatarUrl: string;
     bio: string;
     age?: number | string;
     favoriteShows?: string[];
     favoriteGames?: string[];
+    favoriteSnacks?: string[];
     stats: Stat[];
     skills: Skill[];
     projects: Project[];
@@ -31,6 +32,7 @@ export default function InternProfileCard({
     age,
     favoriteShows,
     favoriteGames,
+    favoriteSnacks,
     stats,
     skills,
     projects,
@@ -39,7 +41,7 @@ export default function InternProfileCard({
 }: InternProfileCardProps) {
     return (
         <div className="profile-card-wrapper">
-            <div className="profile-header-tag">{subtitle}</div>
+            {subtitle && <div className="profile-header-tag">{subtitle}</div>}
 
             <div className="profile-card-main">
 
@@ -69,6 +71,7 @@ export default function InternProfileCard({
 
                     <PopCultureBox title="🎬 Pop-Corn Favorites:" items={favoriteShows || []} />
                     <PopCultureBox title="🎮 Gaming Stack:" items={favoriteGames || []} />
+                    <PopCultureBox title="🍿 Favorite Snacks:" items={favoriteSnacks || []} />
 
                     {quote && (
                         <div className="profile-quote-box">

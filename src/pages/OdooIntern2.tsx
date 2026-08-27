@@ -1,5 +1,6 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
+import './OdooIntern2.css';
 
 interface OdooIntern2Props {
   onUnlockNext: () => void;
@@ -9,45 +10,46 @@ export default function OdooIntern2({ onUnlockNext }: OdooIntern2Props) {
   return (
     <InternTemplate
       levelNumber={2}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Aaron is about to introduce you to his dog."
+      internRole="Do try to contain your excitement."
       nextRoute="/level3"
       onUnlockNext={onUnlockNext}
       
       content={
         <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 2. Refer to Level 0 for example structure and tone."
-          age="25"
-          favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
+          name="Yuna"
+          avatarUrl="./src/assets/images/alondot/Yuna.jpg"
+          bio="Wouf ! I am a very good girl, and I love to play with my human. I am very loyal and protective, but I also love to cuddle."
+          age="1"
+          favoriteSnacks={[
+              "🦴 Dental chew bones",
+              "🍟 Fries from the table",
+              "🍗 Chicken treats — the forbidden luxury"
           ]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+              "🎾 Fetch (she brings it back 30% of the time)",
+              "😼 Wrestling the cat (the cat disagrees)",
+              "🕵️ Hide and seek with daddy",
+              "🌳 Zoomies around trees at full speed"
           ]}
-          quote="Here is a funny quote or catchphrase."
-          mood="Here is the current mood"
+          quote="Are we going for a walk, or shall I simply cause problems?"
+          mood="Excited and ready to play!"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
-            { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+              { label: "🐾 Zoomies per day", value: "∞" },
+              { label: "🧦 Socks stolen", value: "47 (and counting)" },
+              { label: "😴 Nap hours", value: "16h/day" },
+              { label: "❤️ Cuddles given", value: "All of them" },
           ]}
+
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+              { name: "Being adorable", level: "100%" },
+              { name: "Selective hearing", level: "95%" },
+              { name: "Sit & stay (when bribed)", level: "75%" },
+              { name: "Not eating the cat's food", level: "12%" },
           ]}
+
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+              { title: "Bark at the Wind 🌬️", description: "A research initiative studying whether barking at invisible threats actually works. Results: inconclusive, but ongoing." }
           ]}
         />
       }

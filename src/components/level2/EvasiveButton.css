@@ -1,0 +1,30 @@
+.evasive-playground {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px dashed #714b67;
+    background: rgba(113, 75, 103, 0.04);
+}
+
+.evasive-btn {
+    position: absolute;
+    padding: 0.6rem 1.4rem;
+    background-color: #714b67;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.evasive-btn:hover {
+    background-color: #5a3a52;
+}
