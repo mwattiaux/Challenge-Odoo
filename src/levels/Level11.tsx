@@ -1,10 +1,7 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
-import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import DragUnlockPuzzle, { DRAG_UNLOCK_FLAG } from '../components/DragUnlockPuzzle';
 
 interface Level11Props {
   onUnlock: () => void;
@@ -14,51 +11,28 @@ export default function Level11({ onUnlock }: Level11Props) {
   return (
     <LevelTemplate
       levelNumber={11}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="You can't do that!"
+      subtitle="You don't have the permissions to access the password."
       hintTimerDuration={10}
-      
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 11. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
-
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
+          <ContentText text="Someone locked the button that reveals the password." />
+          <DragUnlockPuzzle />
         </>
       }
-
-      correctAnswer="test"
+      correctAnswer={DRAG_UNLOCK_FLAG}
       nextRoute="/odoo-intern-11"
-      
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 11." />
+          <ContentText text="If only the user had admin rights..." />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 11." />
+          <ContentText text="Maybe the button doesn't belong where it is." />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ContentText text="Try dragging the button somewhere else." />
         </Hint>,
-        <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
       ]}
-      
       onUnlock={onUnlock}
     />
   );

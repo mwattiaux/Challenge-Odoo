@@ -1,0 +1,29 @@
+.nothing-here-box {
+  --i-dont-hide-anything: #fdfcff;
+  position: relative;
+  height: 20px;
+  width: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+p.rdm-text {
+  color: var(--i-dont-hide-anything);
+  position: absolute;
+}
+
+.p-1 {
+  left: 58%;
+}
+
+.p-2 {
+  left: 50%;
+}
+
+.p-3 {
+  left: 53.5%;
+}
+
+.p-4 {
+  left: 66%;
+}

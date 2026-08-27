@@ -1,0 +1,783 @@
+/* =========================================================
+   DUNGEON CHALLENGE
+   ========================================================= */
+
+
+/* =========================================================
+   1. THEME
+   ========================================================= */
+
+.dungeon-theme {
+    /* Backgrounds */
+    --dungeon-bg: #080706;
+    --dungeon-surface: #11100e;
+    --dungeon-panel: rgba(12, 10, 9, 0.8);
+
+    /* Stone */
+    --dungeon-stone-dark: #292524;
+    --dungeon-stone: #44403c;
+    --dungeon-stone-light: #78716c;
+
+    /* Wood */
+    --dungeon-wood-dark: #27160d;
+    --dungeon-wood: #653a1d;
+
+    /* Gold / accent */
+    --dungeon-gold-dark: #78350f;
+    --dungeon-gold: #d97706;
+    --dungeon-gold-light: #fbbf24;
+
+    /* Text */
+    --dungeon-text: #e7e5e4;
+    --dungeon-text-muted: #a8a29e;
+    --dungeon-text-dark: #57534e;
+
+    /* Borders */
+    --dungeon-border: #292524;
+    --dungeon-border-gold: rgba(146, 64, 14, 0.4);
+
+    /* Radius */
+    --dungeon-radius: 0.75rem;
+    --dungeon-radius-large: 1rem;
+
+    /* Shadows */
+    --dungeon-shadow:
+            0 20px 25px -5px rgb(0 0 0 / 0.5),
+            0 8px 10px -6px rgb(0 0 0 / 0.5);
+}
+
+
+/* =========================================================
+   2. PAGE
+   ========================================================= */
+
+.dungeon-page {
+    min-height: 100vh;
+
+    padding: 2.5rem 1.25rem;
+
+    background: transparent;
+    color: var(--dungeon-text);
+}
+
+.dungeon-container {
+    width: 100%;
+    max-width: 80rem;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   3. HEADER / INTRODUCTION
+   ========================================================= */
+
+.dungeon-header {
+    max-width: 48rem;
+
+    margin: 0 auto 2.5rem;
+
+    text-align: center;
+}
+
+.dungeon-eyebrow {
+    margin-bottom: 0.75rem;
+
+    font-family: monospace;
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+
+    color: var(--dungeon-gold);
+}
+
+.dungeon-title {
+    margin-bottom: 1.5rem;
+
+    font-family: Georgia, serif;
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1;
+
+    color: #714b67;
+}
+
+.dungeon-introduction {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    line-height: 1.75;
+
+    color: #4b5563;
+}
+
+
+.dungeon-objective {
+    margin-top: 0.5rem;
+
+    font-size: 1.125rem;
+    font-weight: 700;
+
+    color: #714b67;
+}
+
+
+/* =========================================================
+   4. DOOR SCENE
+   ========================================================= */
+
+.dungeon-door-scene {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 3rem 2rem;
+
+    border: 1px solid var(--dungeon-border);
+    border-radius: var(--dungeon-radius-large);
+
+    background: var(--dungeon-surface);
+
+    box-shadow: var(--dungeon-shadow);
+}
+
+
+/* =========================================================
+   5. STONE DOOR FRAME
+   ========================================================= */
+
+.dungeon-door-frame {
+    padding: 1.25rem;
+
+    border: 22px solid var(--dungeon-stone);
+    border-radius: 160px 160px 0 0;
+
+    background: var(--dungeon-stone-dark);
+
+    box-shadow:
+            0 0 100px rgb(0 0 0 / 0.8),
+            inset 0 0 30px rgb(0 0 0 / 0.4);
+}
+
+
+/* =========================================================
+   6. DOOR
+   ========================================================= */
+
+.dungeon-door {
+    position: relative;
+
+    width: min(540px, 70vw);
+    height: 760px;
+
+    overflow: hidden;
+
+    border: 12px solid var(--dungeon-wood-dark);
+    border-radius: 125px 125px 0 0;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    #3b2112,
+                    var(--dungeon-wood),
+                    #321b0f
+            );
+
+    box-shadow:
+            inset 0 0 80px rgb(0 0 0 / 0.7);
+
+    transform-origin: left center;
+
+    transition:
+            transform 900ms cubic-bezier(.22, .61, .36, 1),
+            filter 900ms ease;
+}
+
+
+/* =========================================================
+   7. DOOR OPENING
+   ========================================================= */
+
+.dungeon-door--opened {
+    transform:
+            perspective(1400px)
+            rotateY(-72deg);
+
+    filter: brightness(0.65);
+}
+
+
+/* =========================================================
+   8. WOODEN PLANKS
+   ========================================================= */
+
+.dungeon-wood-plank {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    border-right: 1px solid rgb(0 0 0 / 0.3);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   9. IRON REINFORCEMENT
+   ========================================================= */
+
+.dungeon-iron-bar {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 2.5rem;
+
+    border-top: 4px solid rgb(0 0 0 / 0.4);
+    border-bottom: 4px solid rgb(0 0 0 / 0.4);
+
+    background: var(--dungeon-stone);
+
+    box-shadow: 0 10px 15px rgb(0 0 0 / 0.3);
+}
+
+.dungeon-iron-bar--top {
+    top: 190px;
+}
+
+.dungeon-iron-bar--bottom {
+    bottom: 180px;
+}
+
+
+/* =========================================================
+   10. CENTRAL RUNE
+   ========================================================= */
+
+.dungeon-rune {
+    position: absolute;
+
+    top: 270px;
+    left: 50%;
+
+    display: flex;
+
+    width: 9rem;
+    height: 9rem;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translateX(-50%);
+
+    border: 4px solid rgb(146 64 14 / 0.6);
+    border-radius: 50%;
+
+    background: rgb(0 0 0 / 0.2);
+
+    font-family: Georgia, serif;
+    font-size: 3rem;
+
+    color: rgb(180 83 9 / 0.6);
+
+    box-shadow:
+            0 0 20px rgb(180 83 9 / 0.1);
+
+    user-select: none;
+}
+
+.dungeon-rune-symbol {
+    position: absolute;
+
+    font-size: 1.125rem;
+
+    color: rgb(180 83 9 / 0.5);
+}
+
+.dungeon-rune-symbol--top {
+    top: 0.5rem;
+    left: 0.75rem;
+
+    transform: rotate(-30deg);
+}
+
+.dungeon-rune-symbol--bottom {
+    right: 1rem;
+    bottom: 0.5rem;
+
+    transform: rotate(30deg);
+}
+
+
+/* =========================================================
+   11. ROMAN NUMERAL
+   ========================================================= */
+
+.dungeon-roman-numeral {
+    position: absolute;
+
+    top: 8rem;
+    left: 2rem;
+
+    padding: 0.25rem 0.75rem;
+
+    transform: rotate(-8deg);
+
+    border: 1px solid #1c1917;
+
+    background: var(--dungeon-stone-light);
+    color: #1c1917;
+
+    font-family: Georgia, serif;
+    font-size: 1.125rem;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   12. FAKE INTERACTABLES
+   ========================================================= */
+
+.dungeon-fake-skull,
+.dungeon-fake-keyhole {
+    position: absolute;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+}
+
+.dungeon-fake-skull {
+    top: 400px;
+    right: 2rem;
+
+    font-size: 3rem;
+
+    opacity: 0.7;
+}
+
+.dungeon-fake-keyhole {
+    bottom: 120px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 1.875rem;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   13. INSCRIPTION
+   ========================================================= */
+
+.dungeon-inscription {
+    position: absolute;
+
+    bottom: 1.5rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-family: monospace;
+    font-size: 0.625rem;
+
+    letter-spacing: 0.4em;
+
+    color: var(--dungeon-gold-dark);
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   14. DOOR HANDLE
+   Actual solution to the challenge.
+
+   IMPORTANT:
+   No hover.
+   No transition.
+   No pointer cursor.
+   No visual feedback.
+
+   It must look exactly like decoration.
+   ========================================================= */
+
+.dungeon-handle {
+    position: absolute;
+
+    top: 455px;
+    right: 72px;
+
+    width: 115px;
+    height: 20px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 4px solid #161616;
+    border-radius: 9999px;
+
+    background:
+            linear-gradient(
+                    to bottom,
+                    #a8a29e,
+                    #57534e,
+                    #292524
+            );
+
+    box-shadow:
+            0 5px 10px rgb(0 0 0 / 0.5);
+
+    /*
+     * Deliberately not pointer.
+     * We don't want to reveal the solution.
+     */
+    cursor: default;
+}
+
+.dungeon-handle-base {
+    position: absolute;
+
+    top: 50%;
+    left: -1.25rem;
+
+    width: 2.5rem;
+    height: 3rem;
+
+    transform: translateY(-50%);
+
+    border: 4px solid #181818;
+    border-radius: 9999px;
+
+    background: var(--dungeon-stone);
+}
+
+
+/* =========================================================
+   15. HIDDEN / FAKE CLUE
+   ========================================================= */
+
+.ancient-whisper {
+    display: none;
+}
+
+.ancient-whisper::after {
+    /*
+     * This looks suspicious.
+     *
+     * Surely this must be the password...
+     */
+    content: "VGhlIHBhc3N3b3JkIGlzIG5vdCBoZXJlLg==";
+}
+
+
+/* =========================================================
+   16. FLOOR SHADOW
+   ========================================================= */
+
+.dungeon-floor-shadow {
+    width: min(500px, 80%);
+    height: 2rem;
+
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    background: rgb(0 0 0 / 0.6);
+
+    filter: blur(8px);
+}
+
+
+/* =========================================================
+   17. INFORMATION BELOW DOOR
+   ========================================================= */
+
+.dungeon-information {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 2.5rem auto 0;
+}
+
+
+/* =========================================================
+   18. INFORMATION PANEL
+   ========================================================= */
+
+.dungeon-theme .dungeon-panel {
+    padding: 1.5rem;
+
+    border: 1px solid var(--dungeon-border);
+    border-radius: var(--dungeon-radius);
+
+    background: var(--dungeon-panel);
+
+    box-shadow: var(--dungeon-shadow);
+}
+
+.dungeon-theme .dungeon-panel--gold {
+    border-color: var(--dungeon-border-gold);
+}
+
+.dungeon-theme .dungeon-panel-title {
+    margin-top: 0.5rem;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.dungeon-theme .dungeon-label {
+    margin-bottom: 1rem;
+
+    font-family: monospace;
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+
+    color: var(--dungeon-gold);
+}
+
+.dungeon-theme .dungeon-info-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 0.875rem;
+
+    color: var(--dungeon-text-muted);
+}
+
+
+/* =========================================================
+   19. FAKE TERMINAL
+   ========================================================= */
+
+.dungeon-theme .dungeon-terminal {
+    padding: 1.5rem;
+
+    border: 1px solid var(--dungeon-border);
+    border-radius: var(--dungeon-radius);
+
+    background: rgb(0 0 0 / 0.3);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+
+    color: var(--dungeon-text-dark);
+}
+
+
+/* =========================================================
+   20. DOOR RESULT
+   ========================================================= */
+
+.dungeon-theme .dungeon-door-result {
+    margin-top: 2.5rem;
+
+    text-align: center;
+
+    animation:
+            dungeon-result-appear 700ms ease both;
+}
+
+.dungeon-door-result__sound {
+    margin-bottom: 0.75rem;
+
+    font-family: monospace;
+
+    color: var(--dungeon-text-dark);
+}
+
+.dungeon-door-result__title {
+    margin-bottom: 0.5rem;
+
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: var(--dungeon-gold-light);
+}
+
+.dungeon-door-result__text {
+    color: var(--dungeon-text-muted);
+}
+
+.dungeon-door-result__answer {
+    margin-top: 1.5rem;
+
+    font-family: monospace;
+
+    color: var(--dungeon-text-muted);
+}
+
+.dungeon-door-result__answer strong {
+    color: var(--dungeon-gold-light);
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   21. RESULT ANIMATION
+   ========================================================= */
+
+@keyframes dungeon-result-appear {
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   22. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .dungeon-information {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   23. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .dungeon-page {
+        padding:
+                2rem
+                0.75rem;
+    }
+
+    .dungeon-door-scene {
+        padding:
+                2rem
+                0.75rem;
+    }
+
+    .dungeon-door-frame {
+        padding: 0.75rem;
+
+        border-width: 14px;
+        border-radius:
+                100px
+                100px
+                0
+                0;
+    }
+
+    .dungeon-door {
+        width: min(420px, 75vw);
+        height: 590px;
+
+        border-width: 8px;
+        border-radius:
+                75px
+                75px
+                0
+                0;
+    }
+
+    .dungeon-iron-bar--top {
+        top: 145px;
+    }
+
+    .dungeon-iron-bar--bottom {
+        bottom: 140px;
+    }
+
+    .dungeon-rune {
+        top: 200px;
+
+        width: 7rem;
+        height: 7rem;
+
+        font-size: 2.25rem;
+    }
+
+    .dungeon-roman-numeral {
+        top: 6rem;
+        left: 1.25rem;
+    }
+
+    .dungeon-fake-skull {
+        top: 305px;
+        right: 1.25rem;
+
+        font-size: 2.25rem;
+    }
+
+    .dungeon-fake-keyhole {
+        bottom: 90px;
+    }
+
+    .dungeon-handle {
+        top: 355px;
+        right: 45px;
+
+        width: 85px;
+        height: 17px;
+    }
+
+    .dungeon-handle-base {
+        left: -1rem;
+
+        width: 2rem;
+        height: 2.5rem;
+    }
+
+    .dungeon-inscription {
+        font-size: 0.5rem;
+        letter-spacing: 0.25em;
+    }
+}
