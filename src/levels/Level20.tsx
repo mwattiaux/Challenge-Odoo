@@ -1,65 +1,57 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import "./Level20.css";
 
 interface Level20Props {
-  onUnlock: () => void;
+    onUnlock: () => void;
 }
 
 export default function Level20({ onUnlock }: Level20Props) {
-  return (
-    <LevelTemplate
-      levelNumber={20}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
-      
-      riddleContent={
-        <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 20. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+    return (
+        <LevelTemplate
+            levelNumber={20}
+            title="Always nothing to hide ?"
+            subtitle="I still dont have anything to hide, I guess."
+            hintTimerDuration={30}
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
-        </>
-      }
+            riddleContent={
+                <>
+                    <ContentImage
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fwhite-board-colored-markers-alphabet-handrawn-vector-illustration-43541280.jpg"
+                        alt="Placeholder"
+                    />
 
-      correctAnswer="test"
-      nextRoute="/level21"
-      
-      hints={[
-        <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 20." />
-        </Hint>,
-        <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 20." />
-        </Hint>,
-        <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
-        </Hint>,
-        <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
-      ]}
-      
-      onUnlock={onUnlock}
-    />
-  );
+                    <p className="test-text ykdtms"></p>
+                    <p className="test-text ypiecl"></p>
+                    <p className="test-text xxjxgj"></p>
+                    <p className="test-text coytum"></p>
+                    <p className="test-text ttalxi"></p>
+                    <p className="test-text qgyjhh"></p>
+
+                </>
+            }
+
+            correctAnswer="X98G26"
+            nextRoute="/level21"
+
+            hints={[
+                <Hint number={1}>
+                    <ContentText text="More colored ?" />
+                </Hint>,
+                <Hint number={2}>
+                    <ContentText text="All letters are in uppercase" />
+                </Hint>,
+                <Hint number={3}>
+                    <ContentText text="I like the french word ORDinateur" />
+                </Hint>,
+                <Hint number={4}>
+                    <ContentText text="Try sort the sum the ord of each class name" />
+                </Hint>
+            ]}
+
+            onUnlock={onUnlock}
+        />
+    );
 }
