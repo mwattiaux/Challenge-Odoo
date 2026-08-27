@@ -55,7 +55,7 @@ export default function Level10({ onUnlock }: Level10Props) {
 
       hints={[
         <Hint number={1}>
-          <ContentText text="The guards are answering a question ." />
+          <ContentText text="The guards are answering a question." />
         </Hint>,
         <Hint number={2}>
           <ContentText text="What if you were blind ?" />
@@ -64,7 +64,7 @@ export default function Level10({ onUnlock }: Level10Props) {
           <ContentText text="Does any properties seem weird in these tags ?" />
         </Hint>,
         <Hint number={4}>
-          <ContentText text="You should only give the name of the door to heaven ." />
+          <ContentText text="You should only give the name of the door to heaven." />
         </Hint>
       ]}
 
