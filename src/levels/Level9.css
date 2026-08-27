@@ -1,8 +1,5 @@
-:root {
-  --i-dont-hide-anything: #fdfcff;
-}
-
 .nothing-here-box {
+  --i-dont-hide-anything: #fdfcff;
   position: relative;
   height: 20px;
   width: 300px;
