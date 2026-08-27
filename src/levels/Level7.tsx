@@ -1,8 +1,6 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
 
@@ -14,48 +12,40 @@ export default function Level7({ onUnlock }: Level7Props) {
   return (
     <LevelTemplate
       levelNumber={7}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="What is my first name ?"
+      subtitle="RegexGame"
       hintTimerDuration={10}
       
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 7. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
-
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+          <div style={{ marginTop: '20px', marginBottom: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
+            🔑 <strong>The key :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>^(?=.{6}$)(?=.*ô)(?=.*é).+$</span>
           </div>
+          <ContentText text="Alexandre, Alexis, Alice, Alicia, Alix, Amélie, Anaïs, André, Angèle, Anthony, Antoine, Arthur, Aurélie, Axel, Baptiste, Béatrice, Benjamin, Bernard, Brigitte, Camille, Caroline, Catherine, Cédric, Célestin, Céline, Charles, Charlotte, Chloé, Christophe, Clara, Clémence, Clément, Coralie, Damien, Daniel, David, Denis, Diane, Dominique, Édouard, Élise, Élodie, Émilie, Éric, Estelle, Ethan, Eva, Fabien, Fanny, Félix, Florence, François, Gabriel, Gaspard, Geoffrey, Gérald, Gérard, Guillaume, Hélène, Henri, Hugo, Inès, Isabelle, Jacques, Jade, Jean, Jérôme, Jérémie, Joël, Jonathan, Joseph, Joséphine, Jules, Julia, Julien, Justine, Kevin, Laura, Laurence, Léa, Léo, Léon, Léonie, Liam, Lilou, Lola, Louise, Lucas, Lucie, Maëlle, Manon, Marc, Marcel, Margaux, Marie, Marion, Martin, Mathieu, Maxime, Mélanie, Michel" />
+          
+          
+
+        
         </>
       }
 
-      correctAnswer="test"
+      correctAnswer="Jérôme"
       nextRoute="/odoo-intern-7"
       
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 7." />
+          <ContentText text="This is a regular expression (Regex)." />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 7." />
+          <ContentText text="Count the characters." />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ContentText text="The accents matter." />
         </Hint>,
         <Hint number={4}>
           <ComponentLabel name="ContentVideo inside Hint" />
           <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          <ContentImage src="https://upload.wikimedia.org/wikipedia/commons/9/90/J%C3%A9r%C3%B4me_Commandeur_C%C3%A9sar_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Photo de Jérôme Commandeur" />
         </Hint>
       ]}
       

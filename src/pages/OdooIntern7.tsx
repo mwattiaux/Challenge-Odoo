@@ -9,45 +9,42 @@ export default function OdooIntern7({ onUnlockNext }: OdooIntern7Props) {
   return (
     <InternTemplate
       levelNumber={7}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Jérôme Verkyndt"
+      internRole="Intern"
       nextRoute="/level8"
       onUnlockNext={onUnlockNext}
       
       content={
         <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 7. Refer to Level 0 for example structure and tone."
+          subtitle=''
+          name="Jérôme Verkyndt"
+          avatarUrl="https://res.cloudinary.com/db7gzoduv/image/upload/v1787839593/Jerome.jpg"
+          bio="I have a Bachelor’s degree in Computer Science from EPHEC and I’m passionate about new technologies. I enjoy learning and discovering new things. Outside of IT, I love doing sports, especially cycling, which I enjoy doing with my friends. I also love travelling, stepping out of my comfort zone, and spending quality time with my friends and family."
           age="25"
           favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
+            "Prisoners",
+            "The Hangover",
+            "The Dark Knight"
           ]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+            "Assassin’s Creed III",
+            "Dofus",
+            "GTA V"
           ]}
-          quote="Here is a funny quote or catchphrase."
-          mood="Here is the current mood"
+          mood="Happy and motivated to start my internship at Odoo!"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
-            { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+            { label: "Sports", value: "Cycling · Running · Basketball" },
+            { label: "Travel", value: "All Around the World 🌎" },
+            { label: "Music", value: "Rap · House" },
           ]}
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+            { name: "Curiosity", level: "95%" },
+            { name: "Teamwork", level: "90%" },
+            { name: "Transdimensional Quantum Mechanics", level: "1%" },
+            { name: "After Work 🍻 (Rank: Challenger)", level: "100%" },
           ]}
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+            { title: "TFE – Vegetable Basket Management", description: "I developed a web application for a local market gardener in Grez-Doiceau as part of my final-year project. The application enables inventory management and the organization of vegetable basket distribution." },
           ]}
         />
       }
