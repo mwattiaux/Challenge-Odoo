@@ -20,7 +20,7 @@ export default function OdooIntern9({ onUnlockNext }: OdooIntern9Props) {
                     name="Alexandre Pirmez"
                     subtitle="developer"
                     avatarUrl="/src/assets/alexandre_pirmez_image_profile.png"
-                    bio="Here is the main biography description of the intern for level 9. Refer to Level 0 for example structure and tone."
+                    bio="Congratulations on this one! A harder one will come soon!"
                     age="27"
                     favoriteShows={[
                         "Gurren Lagann",
@@ -31,12 +31,11 @@ export default function OdooIntern9({ onUnlockNext }: OdooIntern9Props) {
                         "Yugioh",
                         "The binding of Isaac"
                     ]}
-                    mood="Here is the current mood"
+                    mood="Excited to start this internship and learn new things!"
                     stats={[
-                        { label: "Stat 1", value: "Value 1" },
-                        { label: "Stat 2", value: "Value 2" },
-                        { label: "Stat 3", value: "Value 3" },
-                        { label: "Stat 4", value: "Value 4" },
+                        { label: "Morning coffee", value: "black" },
+                        { label: "Living environment", value: "The terminal" },
+                        { label: "Activity during compilation", value: "Rubik's cube" },
                     ]}
                     skills={[
                         { name: "Python", level: "100%" },
