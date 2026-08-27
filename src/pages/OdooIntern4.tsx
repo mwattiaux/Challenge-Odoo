@@ -17,7 +17,7 @@ export default function OdooIntern4({ onUnlockNext }: OdooIntern4Props) {
         <InternProfileCard
           name="Valentyn"
           subtitle=".NET Full-Stack"
-          avatarUrl="src\assets\valentyn-assets\avatar.jpg"
+          avatarUrl="https://i.imgur.com/ogorpXd.jpeg"
           bio="Hi, congrats on passing my little task, be ready for even more o_O"
           age="23"
           favoriteShows={["Sopranos 🚬", "Office 💼", "Interns 🏥"]}
