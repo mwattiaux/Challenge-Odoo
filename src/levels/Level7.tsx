@@ -2,7 +2,6 @@ import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
 
 interface Level7Props {
   onUnlock: () => void;
@@ -43,8 +42,7 @@ export default function Level7({ onUnlock }: Level7Props) {
           <ContentText text="The accents matter." />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
+          <ContentText text="The same first name." />
           <ContentImage src="https://upload.wikimedia.org/wikipedia/commons/9/90/J%C3%A9r%C3%B4me_Commandeur_C%C3%A9sar_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Photo de Jérôme Commandeur" />
         </Hint>
       ]}
