@@ -1,5 +1,6 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
+import arthurPP from "../assets/images/arthur-pp.jpg";
 
 interface OdooIntern10Props {
   onUnlockNext: () => void;
@@ -13,14 +14,14 @@ export default function OdooIntern10({ onUnlockNext }: OdooIntern10Props) {
       internRole="Here is the Intern Role / Title"
       nextRoute="/level11"
       onUnlockNext={onUnlockNext}
-      
+
       content={
-        <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
+        <InternProfileCard
+          name="Arthur De Clerck"
+          subtitle="Full Stack Developer"
+          avatarUrl={arthurPP}
           bio="Here is the main biography description of the intern for level 10. Refer to Level 0 for example structure and tone."
-          age="25"
+          age="24"
           favoriteShows={[
             "Here is show 1",
             "Here is show 2",
