@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Rules from './pages/Rules';
@@ -48,7 +48,14 @@ import Level21 from './levels/Level21';
 import Level22 from './levels/Level22';
 
 export default function App() {
-  const [maxStep, setMaxStep] = useState(1);
+  const [maxStep, setMaxStep] = useState(() => {
+    const savedStep = localStorage.getItem("maxStep");
+    return savedStep ? Number(savedStep) : 1;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("maxStep", String(maxStep));
+  }, [maxStep]);
 
   return (
     <Router>
