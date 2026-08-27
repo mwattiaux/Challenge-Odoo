@@ -1,5 +1,6 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
+import corentinAvatar from '../assets/corentin_leonet_avatar.png';
 
 interface OdooIntern11Props {
   onUnlockNext: () => void;
@@ -9,45 +10,47 @@ export default function OdooIntern11({ onUnlockNext }: OdooIntern11Props) {
   return (
     <InternTemplate
       levelNumber={11}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Corentin Léonet"
+      internRole="Intern developper"
       nextRoute="/team-transition"
       onUnlockNext={onUnlockNext}
       
       content={
         <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 11. Refer to Level 0 for example structure and tone."
-          age="25"
+          name="Corentin Léonet"
+          subtitle="Junior software developper"
+          avatarUrl={corentinAvatar}
+          bio="Backend developer and grand strategy enthusiast. Prefers systems and people that fail loudly and predictably."
+          age="29"
           favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
+            "Naruto",
+            "The Expanse",
+            "Mob Psycho 100"
           ]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+            "EU4",
+            "Hoi4",
+            "CK2",
+            "Stellaris",
+            "Smite",
+            "Minecraft (GTNH)"
           ]}
-          quote="Here is a funny quote or catchphrase."
-          mood="Here is the current mood"
+          quote="You win some, you lose some. But man, I hate losing. - Joey Wheeler"
+          mood="Suspiciously convinced this can be automated"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
-            { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+            { label: "Grand Strategy hours", value: "Over 9000!" },
+            { label: "Smite rank", value: "Not high enough" },
+            { label: "Sleep Hours", value: "DLC required" },
+            { label: "Dog enthusiasm", value: "Stat overflow" },
           ]}
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+            { name: "Backend & Data Manipulation", level: "90%" },
+            { name: "Python", level: "85%" },
+            { name: "Decision-Making (mostly correct)", level: "85%" },
           ]}
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+            { title: "Order Management", description: "Order management web application built with Python, Flask and SQLAlchemy." },
+            { title: "Temperature Alert", description: "Web application built with PHP and Yii2 that monitors the average temperature over the last 3 days and sends an email alert when Belgian tire-change regulations are triggered." }
           ]}
         />
       }
