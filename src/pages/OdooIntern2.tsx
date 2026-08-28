@@ -1,6 +1,7 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
 import './OdooIntern2.css';
+import yuna from '../assets/images/alondot/Yuna.jpg';
 
 interface OdooIntern2Props {
   onUnlockNext: () => void;
@@ -18,7 +19,7 @@ export default function OdooIntern2({ onUnlockNext }: OdooIntern2Props) {
       content={
         <InternProfileCard 
           name="Yuna"
-          avatarUrl="../assets/images/alondot/Yuna.jpg"
+          avatarUrl={yuna}
           bio="Wouf ! I am a very good girl, and I love to play with my human. I am very loyal and protective, but I also love to cuddle."
           age="1"
           favoriteSnacks={[
