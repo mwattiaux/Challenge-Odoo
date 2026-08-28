@@ -4,6 +4,7 @@ import ContentImage from '../components/ContentImage';
 // import ContentAudio from '../components/ContentAudio';
 // import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
+import DoorImage from '../assets/door_jb.jpg';
 // import ComponentLabel from '../components/ComponentLabel';
 
 interface Level5Props {
@@ -16,7 +17,7 @@ export default function Level5({ onUnlock }: Level5Props) {
       levelNumber={5}
       title="What a weird lock"
       subtitle="That lock looks like it needs a password to open. But there is nothing here."
-      hintTimerDuration={10}
+      hintTimerDuration={60}
       
       riddleContent={
         <div style={{ position: 'relative' }}>
@@ -46,7 +47,7 @@ export default function Level5({ onUnlock }: Level5Props) {
 
             {/* <ComponentLabel name="ContentImage" /> */}
             <ContentImage 
-              src="src/assets/door_jb.jpg"
+              src={DoorImage}
               alt="Placeholder" 
             />
 

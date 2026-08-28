@@ -1,5 +1,6 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
+import avatarImage from "../assets/beach_jb.jpg";
 
 interface OdooIntern5Props {
   onUnlockNext: () => void;
@@ -18,7 +19,7 @@ export default function OdooIntern5({ onUnlockNext }: OdooIntern5Props) {
         <InternProfileCard 
           name="Jean-Baptiste Delvaux"
           subtitle="Délégué attitré"
-          avatarUrl="src/assets/beach_jb.jpg"
+          avatarUrl={avatarImage}
           bio="Game master extraordinairen, story teller in my lost hours, I have years upon years of time wasting experience. I have a variety of skills and knowledge not possessed by most thought their utility is questionnable. I am also a skittish animal, please avoid loud noises and fireworks nearby."
           age="32"
           favoriteShows={[

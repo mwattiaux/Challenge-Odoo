@@ -4,6 +4,7 @@ import ContentImage from '../components/ContentImage';
 // import ContentAudio from '../components/ContentAudio';
 // import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
+import FootImage from '../assets/footprint_jb.jpg';
 // import ComponentLabel from '../components/ComponentLabel';
 
 interface Level16Props {
@@ -25,7 +26,7 @@ export default function Level16({ onUnlock }: Level16Props) {
       levelNumber={16}
       title="Use your head"
       subtitle="Once more, knowledge eludes you. Yet it is here. You need only remember it."
-      hintTimerDuration={10}
+      hintTimerDuration={60}
       tailHover='...,I have a tail...'
       riddleContent={
         <>
@@ -34,7 +35,7 @@ export default function Level16({ onUnlock }: Level16Props) {
           
           {/* <ComponentLabel name="ContentImage" /> */}
           <ContentImage 
-            src="src/assets/footprint_jb.jpg" 
+            src={FootImage}
             alt="Placeholder" 
           />
 
