@@ -2,9 +2,6 @@ import { useState } from 'react';
 
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
-import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
 
@@ -59,13 +56,6 @@ export default function Level6({ onUnlock }: Level6Props) {
           <ContentText
             text="Enter password."
           />
-
-          {/* <ComponentLabel name="ContentImage" />
-
-          <ContentImage
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop"
-            alt="Placeholder"
-          /> */}
 
           <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
             <input
@@ -133,22 +123,6 @@ export default function Level6({ onUnlock }: Level6Props) {
           <ContentText text="Read the message below the input." />
         </Hint>,
 
-        // <Hint number={2}>
-        //   <ComponentLabel name="ContentText inside Hint" />
-        //   <ContentText text="Here is hint 2 for level 6." />
-        // </Hint>,
-
-        // <Hint number={3}>
-        //   <ComponentLabel name="ContentAudio inside Hint" />
-        //   <ContentText text="Here is hint 3 with audio." />
-        //   <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
-        // </Hint>,
-
-        // <Hint number={4}>
-        //   <ComponentLabel name="ContentVideo inside Hint" />
-        //   <ContentText text="Here is hint 4 with video." />
-        //   <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        // </Hint>,
       ]}
 
       onUnlock={onUnlock}
