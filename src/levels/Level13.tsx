@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import LevelTemplate from '../components/LevelTemplate';
 import Hint from '../components/Hint';
 import ContentText from '../components/ContentText';
@@ -10,6 +11,27 @@ interface Level13Props {
 const NEXT_ROUTE = '/level14';
 
 export default function Level13({ onUnlock }: Level13Props) {
+  const navigate = useNavigate();
+
+  const handleGhostSuccess = async () => {
+    try {
+      // Force l'appel à l'API verify pour mettre à jour le cookie sécurisé du niveau 13
+      const response = await fetch('/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level: 13, answer: 'Ctrl c + ctrl v ' }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        onUnlock();
+        navigate(NEXT_ROUTE);
+      }
+    } catch (err) {
+      console.error("Erreur de validation", err);
+    }
+  };
+
   return (
       <>
         <style>{`
@@ -25,10 +47,9 @@ export default function Level13({ onUnlock }: Level13Props) {
             hintTimerDuration={10}
 
             riddleContent={
-              <GhostKeyboard onSuccess={onUnlock} nextRoute={NEXT_ROUTE} />
+              <GhostKeyboard onSuccess={handleGhostSuccess} nextRoute={NEXT_ROUTE} />
             }
 
-            // correctAnswer="__never_match__"
             nextRoute={NEXT_ROUTE}
 
             hints={[

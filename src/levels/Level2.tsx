@@ -13,9 +13,23 @@ interface Level2Props {
 export default function Level2({ onUnlock }: Level2Props) {
     const navigate = useNavigate();
 
-    const handleSecretClick = () => {
-        onUnlock();
-        navigate('/odoo-intern-2');
+    const handleSecretClick = async () => {
+        try {
+            // Force l'appel à l'API verify pour mettre à jour le cookie sécurisé du niveau 2
+            const response = await fetch('/api/verify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ level: 2, answer: 'Click on """""me"""""' }),
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                onUnlock();
+                navigate('/odoo-intern-2');
+            }
+        } catch (err) {
+            console.error("Erreur de validation", err);
+        }
     };
 
     return (
@@ -40,7 +54,6 @@ export default function Level2({ onUnlock }: Level2Props) {
                     </>
                 }
 
-                // correctAnswer=""
                 nextRoute="/odoo-intern-2"
 
                 hints={[
