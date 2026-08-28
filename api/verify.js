@@ -3,6 +3,7 @@ import crypto from "crypto";
 const SECRET_KEY = process.env.GAME_SECRET || "perecastor";
 
 const correctAnswers = {
+  0: "",
   1: "I OPEN THE DOOR",
   2: 'Click on """""me"""""',
   3: "Odoo-steganography",

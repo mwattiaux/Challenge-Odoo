@@ -13,7 +13,7 @@ export default function TeamTransition({ onUnlockNext }: TeamTransitionProps) {
       const response = await fetch('/api/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ level: 11, answer: "Beware of odin" }), // La réponse exacte du niveau 11 d'après ton tableau
+        body: JSON.stringify({ level:0, answer: "" }), // La réponse exacte du niveau 0 d'après ton tableau
       });
 
       const data = await response.json();
