@@ -8,7 +8,7 @@ const correctAnswers = {
   3: "Odoo-steganography",
   4: "hx992_sec_token_v4",
   5: "opensesame",
-  6: "Odoo4ever<3",
+  6: "0doo4ever<3",
   7: "Jérôme",
   8: "Never Gonna Give You Up",
   9: "Q61go2it",
