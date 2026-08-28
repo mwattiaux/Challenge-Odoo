@@ -1,5 +1,6 @@
 import InternTemplate from '../components/InternTemplate';
 import InternProfileCard from '../components/InternProfileCard';
+import denis from '../assets/images/denismth/Denis.jpg';
 
 interface OdooIntern6Props {
   onUnlockNext: () => void;
@@ -9,45 +10,45 @@ export default function OdooIntern6({ onUnlockNext }: OdooIntern6Props) {
   return (
     <InternTemplate
       levelNumber={6}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Denis MATHIEU"
+      internRole="Developer"
       nextRoute="/level7"
       onUnlockNext={onUnlockNext}
       
       content={
         <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 6. Refer to Level 0 for example structure and tone."
+          name="Denis MATHIEU"
+          subtitle="Developer"
+          avatarUrl={denis}
+          bio="Hello, I see you found the password, I hope I'll be able to pass your own challenges at Odoo ! I'm always up to learning new things and experimenting with new technologies."
           age="25"
           favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
+            "Iron Man",
+            "How to train your Dragon",
+            "How I met your mother"
           ]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+            "Warframe",
+            "Minecraft",
+            "Genshin Impact"
           ]}
-          quote="Here is a funny quote or catchphrase."
-          mood="Here is the current mood"
+          quote="Always staying positive !"
+          mood="Excited to start working !"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
-            { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+            { label: "Sport", value: "Preparing for a marathon" },
+            { label: "Eating", value: "Pasta, pasta and...more pasta !" },
+            { label: "Music", value: "Movie soundtracks mostly" },
+            { label: "Group", value: "Going out and making friends" },
           ]}
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+            { name: "Cooking (mostly desserts)", level: "90%" },
+            { name: "Drawing", level: "70%" },
+            { name: "Woodworking", level: "80%" },
+            { name: "Binge Watching", level: "85%" },
           ]}
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+            { title: "L'Ourson Enrhumé", description: "A schedule manager for child services at home with distance handling." },
+            { title: "Artifacts app", description: "A mobile app to manage my characters on the artifactsMMO API-call based game." }
           ]}
         />
       }
