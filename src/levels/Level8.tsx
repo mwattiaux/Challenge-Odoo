@@ -24,7 +24,7 @@ export default function Level8({ onUnlock }: Level8Props) {
           
           <ComponentLabel name="ContentImage" />
           <ContentImage 
-            src=riddle8pic
+            src={riddle8pic}
             alt="Placeholder" 
           />
 
