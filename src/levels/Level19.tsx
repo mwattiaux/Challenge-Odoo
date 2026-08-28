@@ -3,6 +3,7 @@ import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
+import riddle19pic from '../assets/MaximeNEnigme19Photo.png';
 
 interface Level19Props {
   onUnlock: () => void;
@@ -40,7 +41,7 @@ export default function Level19({ onUnlock }: Level19Props) {
                           {/* Manipulation 1h (réelle) : découpe en polygone, à remettre à clip-path: none */}
                           <div style={{ clipPath: 'polygon(20% 20%, 80% 15%, 85% 80%, 15% 85%)' }}>
                             <ContentImage
-                              src="src/assets/MaximeNEnigme19Photo.png" 
+                              src=riddle19pic
                               alt="The Password"
                             />
                           </div>
@@ -85,7 +86,7 @@ export default function Level19({ onUnlock }: Level19Props) {
         </>
       }
 
-      correctAnswer="technofuturtic"
+      //correctAnswer="technofuturtic"
       nextRoute="/level20"
 
       hints={[
