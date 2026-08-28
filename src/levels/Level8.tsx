@@ -1,10 +1,9 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
+import riddle8pic from '../assets/MaximeNEnigme8Photo.png';
 
 interface Level8Props {
   onUnlock: () => void;
@@ -14,48 +13,51 @@ export default function Level8({ onUnlock }: Level8Props) {
   return (
     <LevelTemplate
       levelNumber={8}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="Find the YouTube Video"
+      subtitle="Your task is to find the video this level is referring to."
       hintTimerDuration={10}
       
       riddleContent={
         <>
           <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 8. Refer to Level 0 for example structure." />
+          <ContentText text="What are we listening to today?" />
           
           <ComponentLabel name="ContentImage" />
           <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
+            src={riddle8pic}
+            alt="Youtube Button" 
           />
 
           <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+            🔑 YouTube is a vi<strong>d</strong>eo host websites with billions of hours of content. 
+               <strong>Q</strong>uickly, you can end up lost on the platform. You can start <strong>w</strong>atching a video about <strong>4</strong>x4 Rubik's Cube,
+               end up on a video about a <strong>w</strong>hisky factory and <strong>9</strong> videos later you are watching a video about
+               the Marvel's <strong>W</strong>olverine video <strong>g</strong>ame and the reactions to its latest trailer on <strong>X</strong>.
+               But, that random aspe<strong>c</strong>t is what we like the most about it. Everytime we are asking ourselves the same <strong>q</strong>uestion :
+               What's the next video we are going to watch? Maybe some music?
           </div>
         </>
       }
 
-      // correctAnswer="test"
+      //correctAnswer="Never Gonna Give You Up"
       nextRoute="/odoo-intern-8"
       
       hints={[
         <Hint number={1}>
           <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 8." />
+          <ContentText text="Some characters seems... different" />
         </Hint>,
         <Hint number={2}>
           <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 8." />
+          <ContentText text="It matters if the letters are in uppercase or lowercase" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ComponentLabel name="ContentText inside Hint" />
+          <ContentText text="What's the structure of a YouTube video URL?" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          <ComponentLabel name="ContentText inside Hint" />
+          <ContentText text="What's the title of the song?" />
         </Hint>
       ]}
       

@@ -1,10 +1,9 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
+import riddle19pic from '../assets/MaximeNEnigme19Photo.png';
 
 interface Level19Props {
   onUnlock: () => void;
@@ -14,51 +13,97 @@ export default function Level19({ onUnlock }: Level19Props) {
   return (
     <LevelTemplate
       levelNumber={19}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="An easy riddle"
+      subtitle="The password is simply on the picture."
       hintTimerDuration={10}
-      
+
       riddleContent={
         <>
           <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 19. Refer to Level 0 for example structure." />
-          
+          <ContentText text="That's an easy riddle! Just look at the picture to get the password." />
+
           <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            {/* Manipulation 1a (réelle) : flou, à retirer */}
+            <div style={{ filter: 'blur(8px)' }}>
+              {/* Manipulation 1b (réelle) : contraste, à remettre à contrast(1) */}
+              <div style={{ filter: 'contrast(0.3)' }}>
+                {/* Manipulation 1e (réelle) : teinte inversée, à remettre à hue-rotate(0deg) */}
+                <div style={{ filter: 'hue-rotate(180deg)' }}>
+                  {/* Manipulation 1f (réelle) : désaturation, à remettre à saturate(1) */}
+                  <div style={{ filter: 'saturate(0)' }}>
+                    {/* Manipulation 1c (réelle) : miroir horizontal, à remettre à scaleX(1) */}
+                    <div style={{ transform: 'scaleX(-1)' }}>
+                      {/* Manipulation 1d (réelle) : retournement vertical, à remettre à scaleY(1) */}
+                      <div style={{ transform: 'scaleY(-1)' }}>
+                        {/* Manipulation 1g (réelle) : inclinaison, à remettre à skew(0deg, 0deg) */}
+                        <div style={{ transform: 'skew(15deg, 10deg)' }}>
+                          {/* Manipulation 1h (réelle) : découpe en polygone, à remettre à clip-path: none */}
+                          <div style={{ clipPath: 'polygon(20% 20%, 80% 15%, 85% 80%, 15% 85%)' }}>
+                            <ContentImage
+                              src={riddle19pic}
+                              alt="The Password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Manipulation 2 (réelle) : calque opaque par-dessus l'image */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: '#1f2937',
+                opacity: 0.85,
+              }}
+            />
+
+            {/* Manipulation 3 (leurre) : bandeau coloré qui semble important mais ne cache rien d'essentiel */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '30%',
+                background: 'repeating-linear-gradient(45deg, #ef4444, #ef4444 10px, #f87171 10px, #f87171 20px)',
+                opacity: 0.9,
+              }}
+            />
+          </div>
 
           <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+            Wait... What happened to the picture?
           </div>
         </>
       }
 
-      // correctAnswer="test"
+      //correctAnswer="technofuturtic"
       nextRoute="/level20"
-      
+
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 19." />
+          <ComponentLabel name="Hint 1" />
+          <ContentText text="Something happened to the picture! But what?" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 19." />
+          <ComponentLabel name="Hint 2" />
+          <ContentText text="How can you fix the issue?" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ComponentLabel name="Hint 3" />
+          <ContentText text="How many layers are there?" />
         </Hint>,
-        <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
       ]}
-      
+
       onUnlock={onUnlock}
     />
   );
