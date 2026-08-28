@@ -17,7 +17,7 @@ export default function Level3({ onUnlock }: Level3Props) {
       levelNumber={3}
       title="The Odoo Logo"
       subtitle="A simple logo isn't it?"
-      hintTimerDuration={1}
+      hintTimerDuration={60}
       
       riddleContent={
         <>
