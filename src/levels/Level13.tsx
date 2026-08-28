@@ -19,7 +19,7 @@ export default function Level13({ onUnlock }: Level13Props) {
       const response = await fetch('/api/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ level: 13, answer: 'Ctrl c + ctrl v ' }),
+        body: JSON.stringify({ level: 13, answer: 'Ctrl c + ctrl v' }),
       });
 
       const data = await response.json();

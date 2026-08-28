@@ -16,7 +16,7 @@ const correctAnswers = {
   10: "Loki",
   11: "What a drag",
   12: "Emptiness",
-  13: "Ctrl c + ctrl v ",
+  13: "Ctrl c + ctrl v",
   14: "ODOO{3_byte_key}",
   15: "access_granted_9921",
   16: "Coin",
