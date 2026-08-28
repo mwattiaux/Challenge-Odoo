@@ -39,7 +39,7 @@ export default function Level13({ onUnlock }: Level13Props) {
                 <ContentText text="Maybe typing isn't the only way to input text." />
               </Hint>,
               <Hint number={3}>
-                <ContentText text="Control is the key to unlocking the secrets of this haunted keyboard." />
+                <ContentText text="Console access is the key to unlocking the secrets of this haunted keyboard." />
               </Hint>,
             ]}
 
