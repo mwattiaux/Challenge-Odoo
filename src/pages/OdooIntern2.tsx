@@ -18,7 +18,7 @@ export default function OdooIntern2({ onUnlockNext }: OdooIntern2Props) {
       content={
         <InternProfileCard 
           name="Yuna"
-          avatarUrl="./src/assets/images/alondot/Yuna.jpg"
+          avatarUrl="../assets/images/alondot/Yuna.jpg"
           bio="Wouf ! I am a very good girl, and I love to play with my human. I am very loyal and protective, but I also love to cuddle."
           age="1"
           favoriteSnacks={[
