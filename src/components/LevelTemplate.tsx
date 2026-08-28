@@ -7,7 +7,6 @@ interface LevelTemplateProps {
   title: string;
   subtitle: string;
   riddleContent: React.ReactNode;
-  correctAnswer: string;
   nextRoute: string;
   hints: React.ReactNode[];
   onUnlock: () => void;
@@ -20,7 +19,6 @@ export default function LevelTemplate({
   title,
   subtitle,
   riddleContent,
-  correctAnswer,
   nextRoute,
   hints,
   onUnlock,
@@ -30,7 +28,7 @@ export default function LevelTemplate({
   const [userAnswer, setUserAnswer] = useState('');
   const [error, setError] = useState(false);
   
-  // 👈 On commence à 0 : aucun indice n'est encore déverrouillé au chargement de la page
+  // On commence à 0 : aucun indice n'est encore déverrouillé au chargement de la page
   const [unlockedCount, setUnlockedCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(hintTimerDuration);
   const [canUnlockNext, setCanUnlockNext] = useState(false);
@@ -68,12 +66,27 @@ export default function LevelTemplate({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-      onUnlock();
-      navigate(nextRoute);
-    } else {
+    setError(false);
+
+    try {
+      const response = await fetch('/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level: levelNumber, answer: userAnswer }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        onUnlock();
+        navigate(nextRoute);
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      console.error("Erreur lors de la validation", err);
       setError(true);
     }
   };
