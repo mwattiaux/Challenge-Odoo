@@ -3,6 +3,7 @@ import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
+import riddle8pic from '../assets/MaximeNEnigme8Photo.png';
 
 interface Level8Props {
   onUnlock: () => void;
@@ -19,11 +20,11 @@ export default function Level8({ onUnlock }: Level8Props) {
       riddleContent={
         <>
           <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 8. Refer to Level 0 for example structure." />
+          <ContentText text="What are we listening to today?" />
           
           <ComponentLabel name="ContentImage" />
           <ContentImage 
-            src="src/assets/MaximeNEnigmePhoto.png" 
+            src=riddle8pic
             alt="Placeholder" 
           />
 
@@ -38,7 +39,7 @@ export default function Level8({ onUnlock }: Level8Props) {
         </>
       }
 
-      correctAnswer="Never Gonna Give You Up"
+      //correctAnswer="Never Gonna Give You Up"
       nextRoute="/odoo-intern-8"
       
       hints={[
