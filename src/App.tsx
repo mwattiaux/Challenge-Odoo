@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Rules from './pages/Rules';
@@ -48,7 +48,28 @@ import Level21 from './levels/Level21';
 import Level22 from './levels/Level22';
 
 export default function App() {
-  const [maxStep, setMaxStep] = useState(1);
+  const [maxStep, setMaxStep] = useState<number | null>(null);
+
+  // Charger la progression depuis le cookie sécurisé au démarrage
+  useEffect(() => {
+    fetch('/api/progress')
+      .then((res) => res.json())
+      .then((data) => {
+        setMaxStep(data.maxStep || 2);
+      })
+      .catch(() => {
+        setMaxStep(2);
+      });
+  }, []);
+
+  // Écran de chargement le temps de lire l'API
+  if (maxStep === null) {
+    return (
+      <div style={{ color: 'white', textAlign: 'center', marginTop: '40vh', fontFamily: 'sans-serif' }}>
+        <h2>Chargement de ta progression... 🚀</h2>
+      </div>
+    );
+  }
 
   return (
     <Router>
@@ -57,16 +78,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rules" element={<ProtectedRoute unlocked={maxStep >= 1}><Rules onUnlockNext={() => setMaxStep(2)} /></ProtectedRoute>} />
 
-        {/* ========================================== */}
-        {/* LEVEL 0 : Sandbox / Showcase (Unprotected) */}
-        {/* ========================================== */}
+        {/* LEVEL 0 : Sandbox */}
         <Route path="/level0" element={<Level0 onUnlock={() => console.log("Level 0 sandbox completed!")} />} />
         <Route path="/odoo-intern-0" element={<OdooIntern0 onUnlockNext={() => {}} />} />
 
-        {/* ========================================== */}
-        {/* ACT 1 : Levels 1 to 11 + Intern Profiles  */}
-        {/* ========================================== */}
-        
+        {/* ACT 1 : Levels 1 to 11 */}
         <Route path="/level1" element={<ProtectedRoute unlocked={maxStep >= 2}><Level1 onUnlock={() => setMaxStep(3)} /></ProtectedRoute>} />
         <Route path="/odoo-intern-1" element={<ProtectedRoute unlocked={maxStep >= 3}><OdooIntern1 onUnlockNext={() => setMaxStep(4)} /></ProtectedRoute>} />
         
@@ -100,14 +116,10 @@ export default function App() {
         <Route path="/level11" element={<ProtectedRoute unlocked={maxStep >= 22}><Level11 onUnlock={() => setMaxStep(23)} /></ProtectedRoute>} />
         <Route path="/odoo-intern-11" element={<ProtectedRoute unlocked={maxStep >= 23}><OdooIntern11 onUnlockNext={() => setMaxStep(24)} /></ProtectedRoute>} />
 
-        {/* ========================================== */}
-        {/* TEAM TRANSITION                           */}
-        {/* ========================================== */}
+        {/* TEAM TRANSITION */}
         <Route path="/team-transition" element={<ProtectedRoute unlocked={maxStep >= 24}><TeamTransition onUnlockNext={() => setMaxStep(25)} /></ProtectedRoute>} />
 
-        {/* ========================================== */}
-        {/* ACT 2 : Hardcore Levels 12 to 22            */}
-        {/* ========================================== */}
+        {/* ACT 2 : Levels 12 to 22 */}
         <Route path="/level12" element={<ProtectedRoute unlocked={maxStep >= 25}><Level12 onUnlock={() => setMaxStep(26)} /></ProtectedRoute>} />
         <Route path="/level13" element={<ProtectedRoute unlocked={maxStep >= 26}><Level13 onUnlock={() => setMaxStep(27)} /></ProtectedRoute>} />
         <Route path="/level14" element={<ProtectedRoute unlocked={maxStep >= 27}><Level14 onUnlock={() => setMaxStep(28)} /></ProtectedRoute>} />
@@ -118,11 +130,9 @@ export default function App() {
         <Route path="/level19" element={<ProtectedRoute unlocked={maxStep >= 32}><Level19 onUnlock={() => setMaxStep(33)} /></ProtectedRoute>} />
         <Route path="/level20" element={<ProtectedRoute unlocked={maxStep >= 33}><Level20 onUnlock={() => setMaxStep(34)} /></ProtectedRoute>} />
         <Route path="/level21" element={<ProtectedRoute unlocked={maxStep >= 34}><Level21 onUnlock={() => setMaxStep(35)} /></ProtectedRoute>} />
-        <Route path="/level22" element={<ProtectedRoute unlocked={maxStep >= 35}><Level22 onUnlock={() => setMaxStep(36)} /></ProtectedRoute>} />
+        <Route path="/level22" element={<ProtectedRoute unlocked={maxStep >= 35}><Level22 onUnlock={() => setMaxStep(37)} /></ProtectedRoute>} />
 
-        {/* ========================================== */}
-        {/* FINAL CONGRATULATIONS PAGE                */}
-        {/* ========================================== */}
+        {/* FINAL CONGRATULATIONS */}
         <Route path="/congratulations" element={<ProtectedRoute unlocked={maxStep >= 36}><FinalCongratulations /></ProtectedRoute>} />
       </Routes>
     </Router>
