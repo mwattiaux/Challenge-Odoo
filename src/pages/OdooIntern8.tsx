@@ -17,6 +17,7 @@ export default function OdooIntern8({ onUnlockNext }: OdooIntern8Props) {
       content={
         <InternProfileCard 
           name="Maxime Nabli"
+          subtitle="Developer"
           avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
           bio="I'll be the kind of coworker that is Never Gonna Give You Up, Never Gonna Let You Down, Never Gonna Run Around and Desert You. I also play
           League of Legends way too much, watch a lot of anime and love Baldur's Gate 3. I also make a lot of puns but they are not always good"
