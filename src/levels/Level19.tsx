@@ -19,10 +19,8 @@ export default function Level19({ onUnlock }: Level19Props) {
 
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
           <ContentText text="That's an easy riddle! Just look at the picture to get the password." />
 
-          <ComponentLabel name="ContentImage" />
           <div style={{ position: 'relative', display: 'inline-block' }}>
             {/* Manipulation 1a (réelle) : flou, à retirer */}
             <div style={{ filter: 'blur(8px)' }}>
@@ -95,11 +93,11 @@ export default function Level19({ onUnlock }: Level19Props) {
           <ContentText text="Something happened to the picture! But what?" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="Hint 2" />
+          <ComponentLabel name="Hint 1" />
           <ContentText text="How can you fix the issue?" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="Hint 3" />
+          <ComponentLabel name="Hint 1" />
           <ContentText text="How many layers are there?" />
         </Hint>,
       ]}

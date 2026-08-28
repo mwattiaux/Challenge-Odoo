@@ -19,13 +19,11 @@ export default function Level8({ onUnlock }: Level8Props) {
       
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="What are we listening to today?" />
+          <ContentText text="Here is the enigma description for Level 8. Refer to Level 0 for example structure." />
           
-          <ComponentLabel name="ContentImage" />
           <ContentImage 
-            src={riddle8pic}
-            alt="Youtube Button" 
+            src={riddle8pic} 
+            alt="Placeholder" 
           />
 
           <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
@@ -44,19 +42,19 @@ export default function Level8({ onUnlock }: Level8Props) {
       
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
+          <ComponentLabel name="Hint 1" />
           <ContentText text="Some characters seems... different" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
+          <ComponentLabel name="Hint 2" />
           <ContentText text="It matters if the letters are in uppercase or lowercase" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentText inside Hint" />
+          <ComponentLabel name="Hint 3" />
           <ContentText text="What's the structure of a YouTube video URL?" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentText inside Hint" />
+          <ComponentLabel name="Hint 4" />
           <ContentText text="What's the title of the song?" />
         </Hint>
       ]}
