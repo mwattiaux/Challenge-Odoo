@@ -41,7 +41,7 @@ export default function Level19({ onUnlock }: Level19Props) {
                           {/* Manipulation 1h (réelle) : découpe en polygone, à remettre à clip-path: none */}
                           <div style={{ clipPath: 'polygon(20% 20%, 80% 15%, 85% 80%, 15% 85%)' }}>
                             <ContentImage
-                              src=riddle19pic
+                              src={riddle19pic}
                               alt="The Password"
                             />
                           </div>
