@@ -20,7 +20,7 @@ export default function Level11({ onUnlock }: Level11Props) {
           <DragUnlockPuzzle />
         </>
       }
-      correctAnswer={DRAG_UNLOCK_FLAG}
+      // correctAnswer={DRAG_UNLOCK_FLAG}
       nextRoute="/odoo-intern-11"
       hints={[
         <Hint number={1}>

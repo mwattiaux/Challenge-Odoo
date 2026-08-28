@@ -47,7 +47,7 @@ export default function Level10({ onUnlock }: Level10Props) {
         </>
       }
 
-      correctAnswer="Loki"
+      // correctAnswer="Loki"
       nextRoute="/odoo-intern-10"
 
       hints={[

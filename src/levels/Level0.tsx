@@ -47,7 +47,7 @@ export default function Level0({ onUnlock }: TestLevelProps) {
         </>
       }
 
-      correctAnswer="odoo"
+      // correctAnswer="odoo"
       nextRoute="/odoo-intern-0"
       
       // Hints section: Add progressive hints here. Each hint can wrap any combination of content components.

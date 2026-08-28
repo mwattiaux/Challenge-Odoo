@@ -30,7 +30,7 @@ export default function Level3({ onUnlock }: Level3Props) {
         </>
       }
 
-      correctAnswer="Odoo-steganography"
+      // correctAnswer="Odoo-steganography"
       nextRoute="/odoo-intern-3"
       
       hints={[

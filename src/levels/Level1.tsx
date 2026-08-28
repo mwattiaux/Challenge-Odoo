@@ -36,7 +36,7 @@ export default function Level1({ onUnlock }: Level1Props) {
         </>
       }
 
-      correctAnswer="I OPEN THE DOOR"
+      // correctAnswer="I OPEN THE DOOR"
       nextRoute="/odoo-intern-1"
       
       hints={[
