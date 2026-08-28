@@ -9,45 +9,45 @@ export default function OdooIntern5({ onUnlockNext }: OdooIntern5Props) {
   return (
     <InternTemplate
       levelNumber={5}
-      internName="Here is the Intern Name"
-      internRole="Here is the Intern Role / Title"
+      internName="Delvaux Jean-Baptiste"
+      internRole="Délégué de l'extrême"
       nextRoute="/level6"
       onUnlockNext={onUnlockNext}
       
       content={
         <InternProfileCard 
-          name="Here is the Name"
-          subtitle="Here is the Subtitle / Department"
-          avatarUrl="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
-          bio="Here is the main biography description of the intern for level 5. Refer to Level 0 for example structure and tone."
-          age="25"
+          name="Jean-Baptiste Delvaux"
+          subtitle="Délégué attitré"
+          avatarUrl="src/assets/beach_jb.jpg"
+          bio="Game master extraordinairen, story teller in my lost hours, I have years upon years of time wasting experience. I have a variety of skills and knowledge not possessed by most thought their utility is questionnable. I am also a skittish animal, please avoid loud noises and fireworks nearby."
+          age="32"
           favoriteShows={[
-            "Here is show 1",
-            "Here is show 2",
-            "Here is show 3"
+            "No Game No Life",
+            "Pokemon",
+            "Le marin des mers de Chines"
           ]}
           favoriteGames={[
-            "Here is game 1",
-            "Here is game 2",
-            "Here is game 3"
+            "Rimworld (I will not talk about it without a lawyer)",
+            "Timberborn",
+            "Metro serie"
           ]}
-          quote="Here is a funny quote or catchphrase."
+          quote="Force answers force, war breeds war, and death only brings death. To break this vicious circle one must do more than just act without any thought or doubt."
           mood="Here is the current mood"
           stats={[
-            { label: "Stat 1", value: "Value 1" },
+            { label: "Potato chips maxxing", value: "Never enough" },
             { label: "Stat 2", value: "Value 2" },
-            { label: "Stat 3", value: "Value 3" },
-            { label: "Stat 4", value: "Value 4" },
+            { label: "Dumb humor", value: "Inappropriately high" },
+            { label: "Sleep per day", value: "Sometime" },
           ]}
           skills={[
-            { name: "Skill 1", level: "80%" },
-            { name: "Skill 2", level: "90%" },
-            { name: "Skill 3", level: "70%" },
-            { name: "Skill 4", level: "85%" },
+            { name: "Binge-watching", level: "40%" },
+            { name: "Shame", level: "10%" },
+            { name: "Rage quitting", level: "90%" },
+            { name: "Game mastering", level: "85%" },
           ]}
           projects={[
-            { title: "Project 1 Title", description: "Here is the description of project 1." },
-            { title: "Project 2 Title", description: "Here is the description of project 2." }
+            { title: "A new Illumination", description: "Single-handedly managed the successful upgrade and deployment of a new environmental illumination system, with zero-cost overruns and zero safety incidents. " },
+            { title: "Communication management", description: "I managed to handle the vast majority of trainee to training center communication, succesfully and while attaining the majority of goals set by the class" }
           ]}
         />
       }
