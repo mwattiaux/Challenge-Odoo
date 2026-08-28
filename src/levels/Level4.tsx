@@ -9,7 +9,7 @@ interface Level4Props {
 }
 
 export default function Level4({ onUnlock }: Level4Props) {
-  const SECRET_PASSWORD = "hx992_sec_token_v4";
+  // const SECRET_PASSWORD = "hx992_sec_token_v4";
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts", {

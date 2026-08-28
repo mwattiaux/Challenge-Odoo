@@ -1,7 +1,7 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import Hint from '../components/Hint';
-import FleeingButtonPuzzle, { FLEEING_BUTTON_FLAG } from '../components/FleeingButtonPuzzle';
+import FleeingButtonPuzzle from '../components/FleeingButtonPuzzle';
 
 interface Level22Props {
   onUnlock: () => void;

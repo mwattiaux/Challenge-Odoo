@@ -1,7 +1,7 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import Hint from '../components/Hint';
-import DragUnlockPuzzle, { DRAG_UNLOCK_FLAG } from '../components/DragUnlockPuzzle';
+import DragUnlockPuzzle from '../components/DragUnlockPuzzle';
 
 interface Level11Props {
   onUnlock: () => void;
