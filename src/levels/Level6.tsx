@@ -114,7 +114,7 @@ export default function Level6({ onUnlock }: Level6Props) {
         </>
       }
 
-      correctAnswer="0doo4ever<3"
+      // correctAnswer="0doo4ever<3"
       nextRoute="/odoo-intern-6"
 
       hints={[

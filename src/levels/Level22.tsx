@@ -20,7 +20,7 @@ export default function Level22({ onUnlock }: Level22Props) {
           <FleeingButtonPuzzle />
         </>
       }
-      correctAnswer={FLEEING_BUTTON_FLAG}
+      // correctAnswer={FLEEING_BUTTON_FLAG}
       nextRoute="/congratulations"
       hints={[
         <Hint number={1}>

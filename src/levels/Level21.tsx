@@ -52,7 +52,7 @@ export default function Level21({ onUnlock }: Level21Props) {
         </>
       }
 
-      correctAnswer="BEWARE OF ODIN"
+      // correctAnswer="BEWARE OF ODIN"
       nextRoute="/level22"
 
       hints={[

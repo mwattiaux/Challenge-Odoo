@@ -85,7 +85,7 @@ export default function Level4({ onUnlock }: Level4Props) {
       title="Network Inspection"
       subtitle="Sometimes the answer isn't visible on the UI. Look under the hood!"
       hintTimerDuration={10}
-      correctAnswer={SECRET_PASSWORD}
+      // correctAnswer={SECRET_PASSWORD}
       nextRoute="/odoo-intern-4"
       onUnlock={onUnlock}
       riddleContent={

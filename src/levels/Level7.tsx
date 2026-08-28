@@ -28,7 +28,7 @@ export default function Level7({ onUnlock }: Level7Props) {
         </>
       }
 
-      correctAnswer="Jérôme"
+      // correctAnswer="Jérôme"
       nextRoute="/odoo-intern-7"
       
       hints={[

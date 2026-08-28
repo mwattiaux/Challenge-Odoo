@@ -57,7 +57,7 @@ export default function Level5({ onUnlock }: Level5Props) {
         </div>
       }
 
-      correctAnswer="opensesame"
+      // correctAnswer="opensesame"
       nextRoute="/odoo-intern-5"
       
       hints={[

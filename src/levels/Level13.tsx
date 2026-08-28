@@ -28,7 +28,7 @@ export default function Level13({ onUnlock }: Level13Props) {
               <GhostKeyboard onSuccess={onUnlock} nextRoute={NEXT_ROUTE} />
             }
 
-            correctAnswer="__never_match__"
+            // correctAnswer="__never_match__"
             nextRoute={NEXT_ROUTE}
 
             hints={[

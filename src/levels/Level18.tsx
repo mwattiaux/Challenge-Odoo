@@ -30,7 +30,7 @@ export default function Level18({ onUnlock }: Level18Props) {
         </>
       }
 
-      correctAnswer="Easy"
+      // correctAnswer="Easy"
       nextRoute="/level19"
       
       hints={[

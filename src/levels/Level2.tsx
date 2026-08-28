@@ -40,7 +40,7 @@ export default function Level2({ onUnlock }: Level2Props) {
                     </>
                 }
 
-                correctAnswer=""
+                // correctAnswer=""
                 nextRoute="/odoo-intern-2"
 
                 hints={[
