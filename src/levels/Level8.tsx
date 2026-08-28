@@ -2,6 +2,7 @@ import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
 import Hint from '../components/Hint';
+import ComponentLabel from '../components/ComponentLabel';
 import riddle8pic from '../assets/MaximeNEnigme8Photo.png';
 
 interface Level8Props {
@@ -41,15 +42,19 @@ export default function Level8({ onUnlock }: Level8Props) {
       
       hints={[
         <Hint number={1}>
+          <ComponentLabel name="Hint 1" />
           <ContentText text="Some characters seems... different" />
         </Hint>,
         <Hint number={2}>
+          <ComponentLabel name="Hint 2" />
           <ContentText text="It matters if the letters are in uppercase or lowercase" />
         </Hint>,
         <Hint number={3}>
+          <ComponentLabel name="Hint 3" />
           <ContentText text="What's the structure of a YouTube video URL?" />
         </Hint>,
         <Hint number={4}>
+          <ComponentLabel name="Hint 4" />
           <ContentText text="What's the title of the song?" />
         </Hint>
       ]}
