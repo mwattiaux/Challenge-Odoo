@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './Home';
 import Rules from './pages/Rules';
 import TeamTransition from './pages/TeamTransition';
@@ -135,6 +136,7 @@ export default function App() {
         {/* FINAL CONGRATULATIONS */}
         <Route path="/congratulations" element={<ProtectedRoute unlocked={maxStep >= 36}><FinalCongratulations /></ProtectedRoute>} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
