@@ -1,65 +1,50 @@
 import LevelTemplate from '../components/LevelTemplate';
-import ContentText from '../components/ContentText';
-import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import ContentText from '../components/ContentText';
+import GhostKeyboard from '../components/level13/GhostKeyboard';
 
 interface Level13Props {
   onUnlock: () => void;
 }
 
+const NEXT_ROUTE = '/level14';
+
 export default function Level13({ onUnlock }: Level13Props) {
   return (
-    <LevelTemplate
-      levelNumber={13}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
-      
-      riddleContent={
-        <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 13. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+      <>
+        <style>{`
+        .level-card form.form-group {
+          display: none !important;
+        }
+      `}</style>
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
-        </>
-      }
+        <LevelTemplate
+            levelNumber={13}
+            title="The Haunted Keyboard"
+            subtitle="Type the phrase... if you can."
+            hintTimerDuration={10}
 
-      correctAnswer="test"
-      nextRoute="/level14"
-      
-      hints={[
-        <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 13." />
-        </Hint>,
-        <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 13." />
-        </Hint>,
-        <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
-        </Hint>,
-        <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
-      ]}
-      
-      onUnlock={onUnlock}
-    />
+            riddleContent={
+              <GhostKeyboard onSuccess={onUnlock} nextRoute={NEXT_ROUTE} />
+            }
+
+            correctAnswer="__never_match__"
+            nextRoute={NEXT_ROUTE}
+
+            hints={[
+              <Hint number={1}>
+                <ContentText text="Your keyboard seems... possessed." />
+              </Hint>,
+              <Hint number={2}>
+                <ContentText text="Maybe typing isn't the only way to input text." />
+              </Hint>,
+              <Hint number={3}>
+                <ContentText text="Control is the key to unlocking the secrets of this haunted keyboard." />
+              </Hint>,
+            ]}
+
+            onUnlock={onUnlock}
+        />
+      </>
   );
 }
