@@ -1,10 +1,11 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
+// import ContentAudio from '../components/ContentAudio';
+// import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import DoorImage from '../assets/door_jb.jpg';
+// import ComponentLabel from '../components/ComponentLabel';
 
 interface Level5Props {
   onUnlock: () => void;
@@ -14,48 +15,68 @@ export default function Level5({ onUnlock }: Level5Props) {
   return (
     <LevelTemplate
       levelNumber={5}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
+      title="What a weird lock"
+      subtitle="That lock looks like it needs a password to open. But there is nothing here."
+      hintTimerDuration={60}
       
       riddleContent={
-        <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 5. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
-
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+        <div style={{ position: 'relative' }}>
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              zIndex: 0,
+              overflow: 'hidden',
+              pointerEvents: 'none',
+              wordBreak: 'break-all',
+              lineHeight: '1.4',
+              fontSize: '1.1rem',
+              color: '#00000022',
+              WebkitTextSecurity: 'disc',
+              // @ts-ignore - non-standard CSS property, only supported via vendor prefix
+              textSecurity: 'disc',
+            } as React.CSSProperties}
+          >
+            {'opensesame'.repeat(400)}
           </div>
-        </>
+
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            {/* <ComponentLabel name="ContentText" /> */}
+            <ContentText text="A mystical door appear in front of you. As you get close, it whispers to you in a language you don't know. And yet, you still understand its meaning. 'Whisper the magic words'" />
+
+            {/* <ComponentLabel name="ContentImage" /> */}
+            <ContentImage 
+              src={DoorImage}
+              alt="Placeholder" 
+            />
+
+            {/* <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
+              🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+            </div> */}
+          </div>
+        </div>
       }
 
-      correctAnswer="test"
+      // correctAnswer="opensesame"
       nextRoute="/odoo-intern-5"
       
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 5." />
+          {/* <ComponentLabel name="ContentText inside Hint" /> */}
+          <ContentText text="The answer is in the background" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 5." />
+          {/* <ComponentLabel name="ContentText inside Hint" /> */}
+          <ContentText text="The pattern behind isn't just decoration" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          {/* <ComponentLabel name="ContentAudio inside Hint" /> */}
+          <ContentText text="You can use the dev tools to inspect and edit the page" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          {/* <ComponentLabel name="ContentVideo inside Hint" /> */}
+          <ContentText text="F12 => Find the -webkit-text-security style on the background element, and change its value to 'none'" />
         </Hint>
       ]}
       

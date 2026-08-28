@@ -21,7 +21,18 @@ export default function InternTemplate({
 }: InternTemplateProps) {
   const navigate = useNavigate();
 
-  const handleNext = () => {
+  const handleNext = async () => {
+    try {
+      // Sauvegarde la progression dans le cookie sécurisé via l'API backend
+      await fetch('/api/intern', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ levelNumber }),
+      });
+    } catch (err) {
+      console.error("Erreur lors de la mise à jour du cookie interne", err);
+    }
+
     onUnlockNext();
     navigate(nextRoute);
   };

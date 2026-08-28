@@ -1,10 +1,11 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+
+// Import your images from the assets folder
+import odooLogoSecret from '../assets/odoo-logo.png';
+import wilburImage from '../assets/wilbur.png';
 
 interface Level3Props {
   onUnlock: () => void;
@@ -14,48 +15,58 @@ export default function Level3({ onUnlock }: Level3Props) {
   return (
     <LevelTemplate
       levelNumber={3}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
+      title="The Odoo Logo"
+      subtitle="A simple logo isn't it?"
+      hintTimerDuration={60}
       
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 3. Refer to Level 0 for example structure." />
+          <ContentText text="What a fantastic company, don't you think? Just type the given password to move on to the next level." />
           
-          <ComponentLabel name="ContentImage" />
           <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
+            src={odooLogoSecret} 
+            alt="Odoo Logo Secret" 
           />
-
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
         </>
       }
 
-      correctAnswer="test"
+      // correctAnswer="Odoo-steganography"
       nextRoute="/odoo-intern-3"
       
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 3." />
+          <ContentText text="A simple logo indeed. But take a close look again." />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 3." />
+          <ContentText text="My mother always told me about a little wilbur who loved to draw and use all kinds of colors..." />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ContentText text="The Wilbur in question:" />
+          <ContentImage src={wilburImage} alt="Wilbur" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          <div>
+            <ContentText text="My mother always told me to look at color curves in art, she found it intriguing. Instead of a wilbur, take a look at :" />
+            <div style={{ marginTop: '6px' }}>
+              <a 
+                href="https://vayce.app/tools/image-curves-adjustment/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: '#2563eb', textDecoration: 'underline', wordBreak: 'break-all', fontWeight: '500' }}
+              >
+                https://vayce.app/tools/image-curves-adjustment/
+              </a>
+            </div>
+          </div>
+        </Hint>,
+        <Hint number={5}>
+          <ContentText text="If you've made it this far, I guess you should have found what seems to be the password, but it might not work. Do you know the principle of acronyms?" />
+        </Hint>,
+        <Hint number={6}>
+          <ContentText text="If you found the hidden message, make sure to look closely at the <strong>bold/uppercase characters</strong>." />
+        </Hint>,
+        <Hint number={7}>
+          <ContentText text="If you've made it this far, I still hope you managed to figure out where to look? If not, you'll never find the exiF way of this riddle :)" />
         </Hint>
       ]}
       

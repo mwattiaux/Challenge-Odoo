@@ -9,7 +9,7 @@ interface Level4Props {
 }
 
 export default function Level4({ onUnlock }: Level4Props) {
-  const SECRET_PASSWORD = "hx992_sec_token_v4";
+  // const SECRET_PASSWORD = "hx992_sec_token_v4";
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -85,7 +85,7 @@ export default function Level4({ onUnlock }: Level4Props) {
       title="Network Inspection"
       subtitle="Sometimes the answer isn't visible on the UI. Look under the hood!"
       hintTimerDuration={10}
-      correctAnswer={SECRET_PASSWORD}
+      // correctAnswer={SECRET_PASSWORD}
       nextRoute="/odoo-intern-4"
       onUnlock={onUnlock}
       riddleContent={

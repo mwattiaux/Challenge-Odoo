@@ -4,6 +4,7 @@ import ContentAudio from '../components/ContentAudio';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
 import DungeonChallenge from "../components/level1/DungeonChallenge.tsx";
+import audioClue from "../assets/level1/poignee.mp3";
 
 interface Level1Props {
   onUnlock: () => void;
@@ -35,7 +36,7 @@ export default function Level1({ onUnlock }: Level1Props) {
         </>
       }
 
-      correctAnswer="I OPEN THE DOOR"
+      // correctAnswer="I OPEN THE DOOR"
       nextRoute="/odoo-intern-1"
       
       hints={[
@@ -50,7 +51,7 @@ export default function Level1({ onUnlock }: Level1Props) {
         <Hint number={3}>
           <ComponentLabel name="Does this sound familiar ?" />
           <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="src/assets/level1/poignee.mp3" />
+          <ContentAudio src={audioClue} />
         </Hint>,
         <Hint number={4}>
           <ComponentLabel name="You can use the handle" />

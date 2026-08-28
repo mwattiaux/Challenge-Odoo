@@ -1,0 +1,63 @@
+.ghost-keyboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.ghost-keyboard-prompt {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+}
+
+.ghost-keyboard-hint {
+    font-size: 0.9rem;
+    color: #714b67;
+    font-style: italic;
+}
+
+.ghost-keyboard-input {
+    width: 100%;
+    max-width: 520px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #714b67;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ghost-keyboard-input:focus {
+    box-shadow: 0 0 0 3px rgba(113, 75, 103, 0.25);
+}
+
+.ghost-keyboard-input.ghost-solved {
+    border-color: #28a745;
+    background-color: #f0fff4;
+}
+
+.ghost-shake {
+    animation: ghost-shake-anim 0.4s ease;
+}
+
+@keyframes ghost-shake-anim {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-5px); }
+    50%  { transform: translateX(5px); }
+    75%  { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.ghost-keyboard-chaos {
+    font-size: 0.85rem;
+    color: #c0392b;
+    font-style: italic;
+}
+
+.ghost-keyboard-success {
+    font-size: 1rem;
+    color: #28a745;
+    font-weight: 600;
+}

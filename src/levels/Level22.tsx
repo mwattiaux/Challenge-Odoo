@@ -1,7 +1,7 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import Hint from '../components/Hint';
-import FleeingButtonPuzzle, { FLEEING_BUTTON_FLAG } from '../components/FleeingButtonPuzzle';
+import FleeingButtonPuzzle from '../components/FleeingButtonPuzzle';
 
 interface Level22Props {
   onUnlock: () => void;
@@ -20,7 +20,7 @@ export default function Level22({ onUnlock }: Level22Props) {
           <FleeingButtonPuzzle />
         </>
       }
-      correctAnswer={FLEEING_BUTTON_FLAG}
+      // correctAnswer={FLEEING_BUTTON_FLAG}
       nextRoute="/congratulations"
       hints={[
         <Hint number={1}>

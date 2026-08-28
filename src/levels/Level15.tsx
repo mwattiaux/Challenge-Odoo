@@ -107,7 +107,7 @@ export default function Level15({ onUnlock }: Level15Props) {
           </div>
         </>
       }
-      correctAnswer="access_granted_9921"
+      // correctAnswer="access_granted_9921"
       nextRoute="/level16"
       hints={[
         <Hint number={1}>

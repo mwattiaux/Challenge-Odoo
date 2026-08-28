@@ -1,65 +1,57 @@
+import { useNavigate } from 'react-router-dom';
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
-import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
 import ComponentLabel from '../components/ComponentLabel';
+import EvasiveButton from '../components/level2/EvasiveButton';
+import SecretTitleTrigger from '../components/level2/SecretTitleTrigger';
 
 interface Level2Props {
-  onUnlock: () => void;
+    onUnlock: () => void;
 }
 
 export default function Level2({ onUnlock }: Level2Props) {
-  return (
-    <LevelTemplate
-      levelNumber={2}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
-      hintTimerDuration={10}
-      
-      riddleContent={
+    const navigate = useNavigate();
+
+    const handleSecretClick = () => {
+        onUnlock();
+        navigate('/odoo-intern-2');
+    };
+
+    return (
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 2. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+            <style>{`
+                .level-card form.form-group {
+                display: none !important;
+                }
+            `}</style>
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
-          </div>
+            <SecretTitleTrigger onTrigger={handleSecretClick} />
+
+            <LevelTemplate
+                levelNumber={2}
+                title="Click on me !"
+                subtitle="RTFM: Read The Fine Manual"
+                hintTimerDuration={30}
+
+                riddleContent={
+                    <>
+                        <EvasiveButton label="Click me if you can!" />
+                    </>
+                }
+
+                // correctAnswer=""
+                nextRoute="/odoo-intern-2"
+
+                hints={[
+                    <Hint number={9.000}>
+                        <ComponentLabel name="Gotch you! 🤡" />
+                        <ContentText text="Excellent CS:GO skills, I’m sure. Sadly, they won’t make you finish this one any faster." />
+                    </Hint>
+                ]}
+
+                onUnlock={onUnlock}
+            />
         </>
-      }
-
-      correctAnswer="test"
-      nextRoute="/odoo-intern-2"
-      
-      hints={[
-        <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 2." />
-        </Hint>,
-        <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 2." />
-        </Hint>,
-        <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
-        </Hint>,
-        <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
-        </Hint>
-      ]}
-      
-      onUnlock={onUnlock}
-    />
-  );
+    );
 }

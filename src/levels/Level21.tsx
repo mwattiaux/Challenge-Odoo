@@ -1,10 +1,8 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import Hliðskjálf from '../assets/images/level21/Odin_s_Throne_by_BurningBrushGallery_on_deviantART_1024x1024.webp';
 
 interface Level21Props {
   onUnlock: () => void;
@@ -14,51 +12,64 @@ export default function Level21({ onUnlock }: Level21Props) {
   return (
     <LevelTemplate
       levelNumber={21}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="What is the secret sentence ?"
+      subtitle="The answer must be decyphered."
       hintTimerDuration={10}
-      
+
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 21. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+          <ContentText text="Find the secret sentence..." />
+          <ContentText text="86 72 81 76 77 90 85 78 79 85 78 75 69 74" />
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+          <div
+            style={{
+              position: 'relative',
+              display: 'inline-block',
+              maxWidth: '100%',
+            }}
+          >
+            <a href="https://www.arthur-declerck.be/decodingTable.txt" target="_blank" rel="noopener noreferrer">
+              <div
+                style={{
+                  position: 'absolute',
+                  left: '50.5%',
+                  top: '38%',
+                  width: '9.75%',
+                  height: '5.53%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 10,
+                  textAlign: 'center',
+                }}
+              >
+              </div>
+            </a>
+
+            <ContentImage
+              src={Hliðskjálf}
+              alt="Hliðskjálf"
+            />
           </div>
         </>
       }
 
-      correctAnswer="test"
+      // correctAnswer="BEWARE OF ODIN"
       nextRoute="/level22"
-      
+
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 21." />
+          <ContentText text="How does a computer read letters ?" />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 21." />
+          <ContentText text="There is a link in the image." />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ContentText text="Do you know cypher keys ?" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          <ContentText text="Decipher using the ASCII table first." />
         </Hint>
       ]}
-      
+
       onUnlock={onUnlock}
     />
   );

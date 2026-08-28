@@ -1,10 +1,9 @@
 import LevelTemplate from '../components/LevelTemplate';
 import ContentText from '../components/ContentText';
 import ContentImage from '../components/ContentImage';
-import ContentAudio from '../components/ContentAudio';
-import ContentVideo from '../components/ContentVideo';
 import Hint from '../components/Hint';
-import ComponentLabel from '../components/ComponentLabel';
+import guard from '../assets/images/level10/guard.jpeg';
+import guard_door from '../assets/images/level10/guard_door.jpeg';
 
 interface Level10Props {
   onUnlock: () => void;
@@ -14,51 +13,58 @@ export default function Level10({ onUnlock }: Level10Props) {
   return (
     <LevelTemplate
       levelNumber={10}
-      title="Here is the title"
-      subtitle="Here is the subtitle / description of the level."
+      title="Door of heaven or door of hell ?"
+      subtitle="One guard only tells the truth, the other only lies."
       hintTimerDuration={10}
-      
+
       riddleContent={
         <>
-          <ComponentLabel name="ContentText" />
-          <ContentText text="Here is the enigma description for Level 10. Refer to Level 0 for example structure." />
-          
-          <ComponentLabel name="ContentImage" />
-          <ContentImage 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" 
-            alt="Placeholder" 
-          />
+          <ContentText text="One of these doors leads to heaven and the other to hell. Choose the right one." />
 
-          <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
-            🔑 <strong>Test Answer :</strong> <span style={{ fontFamily: 'monospace', fontWeight: 'bold', color: '#714B67' }}>test</span>
+          <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}
+            {...({ question: "Do you know which of the two doors is the right one?" } as any)}
+          >
+            <ContentImage
+              src={guard}
+              alt="Guard 1 says the door to my right is the door to heaven."
+            />
+            <span {...({ answer: "No" } as any)}></span>
+
+            <ContentImage
+              src={guard_door}
+              alt="Odin's Door"
+            />
+            <ContentImage
+              src={guard_door}
+              alt="Loki's Door"
+            />
+            <ContentImage
+              src={guard}
+              alt="Guard 2 says the door to my left is the door to heaven."
+            />
+            <span {...({ answer: "Yes" } as any)}></span>
           </div>
         </>
       }
 
-      correctAnswer="test"
+      // correctAnswer="Loki"
       nextRoute="/odoo-intern-10"
-      
+
       hints={[
         <Hint number={1}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 1 for level 10." />
+          <ContentText text="The guards are answering a question." />
         </Hint>,
         <Hint number={2}>
-          <ComponentLabel name="ContentText inside Hint" />
-          <ContentText text="Here is hint 2 for level 10." />
+          <ContentText text="What if you were blind ?" />
         </Hint>,
         <Hint number={3}>
-          <ComponentLabel name="ContentAudio inside Hint" />
-          <ContentText text="Here is hint 3 with audio." />
-          <ContentAudio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+          <ContentText text="Does any properties seem weird in these tags ?" />
         </Hint>,
         <Hint number={4}>
-          <ComponentLabel name="ContentVideo inside Hint" />
-          <ContentText text="Here is hint 4 with video." />
-          <ContentVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+          <ContentText text="You should only give the name of the door to heaven." />
         </Hint>
       ]}
-      
+
       onUnlock={onUnlock}
     />
   );
