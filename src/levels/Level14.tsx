@@ -106,7 +106,7 @@ export default function Level1({ onUnlock }: Level14Props) {
       }
 
       // correctAnswer="ODOO{3_byte_key}"
-      nextRoute="/odoo-intern-1"
+      nextRoute="/level15"
       
       hints={[
         <Hint number={1}>
