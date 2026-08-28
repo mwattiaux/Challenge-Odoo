@@ -25,7 +25,7 @@ export default function Level8({ onUnlock }: Level8Props) {
           <ComponentLabel name="ContentImage" />
           <ContentImage 
             src={riddle8pic}
-            alt="Placeholder" 
+            alt="Youtube Button" 
           />
 
           <div style={{ marginTop: '20px', padding: '12px', background: '#f3f4f6', borderRadius: '8px', borderLeft: '4px solid #714B67', fontSize: '0.9rem', color: '#374151' }}>
