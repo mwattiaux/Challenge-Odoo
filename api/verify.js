@@ -34,7 +34,9 @@ function signData(data) {
 
 // Calcule le prochain maxStep requis selon ton App.tsx
 function getNextMaxStep(levelNum) {
-  if (levelNum < 11) {
+  if (levelNum == 0) {
+    return 25;
+  } else if (levelNum < 11) {
     return levelNum * 2 + 1; // Débloque la page intern correspondante
   } else if (levelNum === 11) {
     return 24; // Débloque TeamTransition
