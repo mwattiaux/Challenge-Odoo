@@ -63,9 +63,13 @@ export default function GhostKeyboard({ onSuccess, nextRoute }: GhostKeyboardPro
     const inputRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
 
-    // Bloque paste partout sur la page
+    // Bloque paste uniquement sur l'input UI (pas depuis la console)
     useEffect(() => {
         if (solved) return;
+        const input = inputRef.current;
+        if (!input) return;
+
+        // Bloque le copier-coller sur l'input lui-même (clic droit, raccourci clavier UI)
         const blockPaste = (e: ClipboardEvent) => {
             e.preventDefault();
             e.stopImmediatePropagation();
@@ -74,16 +78,18 @@ export default function GhostKeyboard({ onSuccess, nextRoute }: GhostKeyboardPro
             e.preventDefault();
             e.stopImmediatePropagation();
         };
-        document.addEventListener('paste', blockPaste, true);
-        document.addEventListener('copy', blockCopy, true);
+
+        input.addEventListener('paste', blockPaste, true);
+        input.addEventListener('copy', blockCopy, true);
+
         return () => {
-            document.removeEventListener('paste', blockPaste, true);
-            document.removeEventListener('copy', blockCopy, true);
+            input.removeEventListener('paste', blockPaste, true);
+            input.removeEventListener('copy', blockCopy, true);
         };
     }, [solved]);
 
     const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
-        // Bloque Ctrl+C, Ctrl+V, Ctrl+A, Ctrl+X explicitement
+        // Bloque Ctrl+C, Ctrl+V, Ctrl+A, Ctrl+X explicitement via clavier
         if ((e.ctrlKey || e.metaKey) && ['c', 'v', 'a', 'x'].includes(e.key.toLowerCase())) {
             e.preventDefault();
             return;
@@ -111,9 +117,6 @@ export default function GhostKeyboard({ onSuccess, nextRoute }: GhostKeyboardPro
         setTimeout(() => setShake(false), 400);
     }, []);
 
-    // Vérifie si la valeur tapée correspond (après remapping, ce sera quasi impossible — c'est voulu)
-    // La seule vraie vérification se fait via une action spéciale, ici on laisse le keyboard fantôme
-    // impossible à résoudre par hasard, et on expose un bouton secret si la valeur exacte est entrée
     useEffect(() => {
         if (value === TARGET_PHRASE && !solved) {
             setSolved(true);
@@ -122,9 +125,19 @@ export default function GhostKeyboard({ onSuccess, nextRoute }: GhostKeyboardPro
         }
     }, [value, solved, onSuccess, navigate, nextRoute]);
 
+    // Expose une fonction dans la console pour que le joueur puisse injecter la valeur
+    useEffect(() => {
+        (window as unknown as Record<string, unknown>).__ghostInput = (text: string) => {
+            setValue(text);
+        };
+        return () => {
+            delete (window as unknown as Record<string, unknown>).__ghostInput;
+        };
+    }, []);
+
     return (
         <div className="ghost-keyboard-wrapper">
-            <p className="ghost-keyboard-prompt">Type exactly this phrase:</p>
+            <p className="ghost-keyboard-prompt">__ghostInput():</p>
             <PhraseCanvas />
             <p className="ghost-keyboard-hint">
                 🎹 The keyboard doesn't quite cooperate...
@@ -134,7 +147,7 @@ export default function GhostKeyboard({ onSuccess, nextRoute }: GhostKeyboardPro
                 className={`ghost-keyboard-input ${shake ? 'ghost-shake' : ''} ${solved ? 'ghost-solved' : ''}`}
                 value={value}
                 onKeyDown={handleKeyDown}
-                onChange={() => {}}
+                onChange={(e) => setValue(e.target.value)}
                 placeholder="Start typing..."
                 disabled={solved}
                 spellCheck={false}
