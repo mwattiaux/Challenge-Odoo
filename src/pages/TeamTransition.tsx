@@ -7,9 +7,23 @@ interface TeamTransitionProps {
 export default function TeamTransition({ onUnlockNext }: TeamTransitionProps) {
   const navigate = useNavigate();
 
-  const handleContinue = () => {
-    onUnlockNext();
-    navigate('/level12');
+  const handleContinue = async () => {
+    try {
+      // Force l'API à valider le passage vers l'Acte 2 (niveau 11 validé -> débloque le niveau 12)
+      const response = await fetch('/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level: 11, answer: "Beware of odin" }), // La réponse exacte du niveau 11 d'après ton tableau
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        onUnlockNext();
+        navigate('/level12');
+      }
+    } catch (err) {
+      console.error("Erreur lors de la transition de l'acte 2", err);
+    }
   };
 
   return (
